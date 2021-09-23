@@ -28,7 +28,7 @@ Read this page before reporting a bug. If you ignore these directions, your repo
 ### Before you report
 
 **Has it already been reported?**  
-Check the [issue tracker](https://github.com/zer0Kerbal/NukeRefueled/issues) and the [Known issues](https://github.com/zer0Kerbal/NukeRefueled/wiki/Known-Issues) to see if the problem has already been reported. If so, see if you can contribute additional information, without adding a new issue. 
+Check the [issue tracker](../issues) and the [Known issues](../wiki/Known-Issues) to see if the problem has already been reported. If so, see if you can contribute additional information, without adding a new issue. 
 If you're not sure if your issue is related, comment on the existing report first.
 
 **Is it intended behavior? / Are you doing it right?**  
@@ -42,7 +42,7 @@ Only the latest version of ScrapYard and the latest version of KSP are supported
 
 ### Filing a report
 
-Bug reports and feature requests should be filled on the [issue tracker](https://github.com/zer0Kerbal/NukeRefueled/issues) here on Github. Please read the following guidelines for filing reports; it's very difficult for me to help otherwise.
+Bug reports and feature requests should be filled on the [issue tracker](../issues) here on Github. Please read the following guidelines for filing reports; it's very difficult for me to help otherwise.
 
 * **Be specific.** The title and description of your report should describe exactly what isn't working. Provide reproduction steps if you can, and explain in detail the symptoms of the issue and what causes it.
 * **Provide your output log.** This file can be found at `KSP/KSP_Data/output_log.txt`. This contains debug information about your last KSP session. Without this, I cannot diagnose most issues. If your report has precise reproduction steps and the cause is obvious, the log is optional. When in doubt, please include it.
