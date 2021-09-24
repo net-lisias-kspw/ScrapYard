@@ -4,7 +4,7 @@
  "labelColor": "white",
  "message": "Expat/MIT",
  "color": "A42E2B",
- "style": "plastic",
  "namedLogo": "gnu",
- "logoColor": "A42E2B"
+ "logoColor": "A42E2B",
+ "style": "plastic"
 }
