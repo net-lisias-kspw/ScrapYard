@@ -9,7 +9,7 @@ updated: 2020 03 16 -->
 # ScrapYard (SYD)
 ## The Common Part Inventory
 ![Mod Version][shield:mod:latest] 
-![KSP version][shield:ksp] ![License MIT][shield:license] ![][LOGO:mit]   
+![KSP version][shield:ksp] ![License MIT][shield:license]  
 ![SpaceDock][shield:curseforge] ![CKAN][shield:ckan] ![GitHub][shield:github] ![Curseforge][shield:spacedock]  
 ![KSP-AVC][shield:kspavc] ![Validate AVC .version files][shield:avcvalid]  
 
@@ -134,7 +134,7 @@ License: ![License MIT][shield:license] ![][LOGO:mit]
 [shield:mod:latest]: https://img.shields.io/github/v/release/zer0Kerbal/ScrapYard?include_prereleases?style=plastic
 [shield:mod]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/mod.json
 [shield:ksp]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/ksp.json
-[shield:license]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/license.json
+[shield:license]: https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/Expat-MIT.svg
 [shield:kspavc]:     https://img.shields.io/badge/KSP-AVC--supported-brightgreen.svg?style=plastic
 [shield:spacedock]:  https://img.shields.io/badge/SpaceDock-Listed-blue.svg?style=plastic
 [shield:ckan]:       https://img.shields.io/badge/CKAN-Indexed-blue.svg?style=plastic
