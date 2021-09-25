@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.Localization;
 
 namespace ScrapYard.UI
 {
@@ -15,7 +16,8 @@ namespace ScrapYard.UI
         private InstanceModulesVM _moduleVM;
         private InstanceModulesUI _moduleUI;
 
-        private string _sellOrDiscard = "Discard";
+        //private string _sellOrDiscard = "Discard";
+        private string _sellOrDiscard = Localizer.Format("#SYD-GUI-11");
 
         public event EventHandler Updated;
         public InventoryPart BackingPart { get { return _backingPart; } }
@@ -27,7 +29,8 @@ namespace ScrapYard.UI
             _selling = selling;
             if (selling)
             {
-                _sellOrDiscard = "Sell";
+                //_sellOrDiscard = "Sell";
+                _sellOrDiscard = Localizer.Format("#SYD-GUI-12");
             }
             _toApply = toApply;
             _moduleVM = new InstanceModulesVM(_backingPart);
@@ -40,7 +43,8 @@ namespace ScrapYard.UI
             {
                 sellPart();
             }
-            if (_moduleVM.GetModules().Count > 0 && GUILayout.Button("Modules"))
+            //if (_moduleVM.GetModules().Count > 0 && GUILayout.Button("Modules"))
+            if (_moduleVM.GetModules().Count > 0 && GUILayout.Button(Localizer.Format("#SYD-GUI-13")))
             {
                 //show module window
                 _moduleUI = ScrapYard.Instance.InstanceModulesUI;
@@ -50,11 +54,13 @@ namespace ScrapYard.UI
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Select"))
+            //if (GUILayout.Button("Select"))
+            if (GUILayout.Button(Localizer.Format("#SYD-GUI-14")))
             {
                 selectPart(null);
             }
-            if (_toApply != null && GUILayout.Button("Apply"))
+            //if (_toApply != null && GUILayout.Button("Apply"))
+            if (_toApply != null && GUILayout.Button(Localizer.Format("#SYD-GUI-15")))
             {
                 selectPart(_toApply);
             }
@@ -64,17 +70,22 @@ namespace ScrapYard.UI
         private void sellPart()
         {
             //confirm with user
-            string msg = "Are you sure you want to discard the part?";
+            //string msg = "Are you sure you want to discard the part?";
+            string msg = Localizer.Format("#SYD-GUI-16");
             if (_selling)
             {
-                msg = $"Are you sure you want to sell the part for {_backingPart.DryCost} funds?";
+                //msg = $"Are you sure you want to sell the part for {_backingPart.DryCost} funds?";
+                msg = Localizer.Format("#SYD-GUI-17", _backingPart.DryCost);
             }
 
-            MultiOptionDialog diag = new MultiOptionDialog("confirmDiscard",
+            //MultiOptionDialog diag = new MultiOptionDialog("confirmDiscard",
+            MultiOptionDialog diag = new MultiOptionDialog(Localizer.Format("confirmDiscard"),
                 msg,
-                _sellOrDiscard + " Part",
+                //_sellOrDiscard + " Part",
+                _sellOrDiscard + Localizer.Format(" #SYD-GUI-18"),
                 HighLogic.UISkin,
-                new DialogGUIButton(_sellOrDiscard, () => {
+                new DialogGUIButton(_sellOrDiscard, () =>
+                {
                     InventoryPart removed = _backingInventory.RemovePart(_backingPart, ComparisonStrength.STRICT);
                     if (removed != null)
                     {
@@ -86,7 +97,8 @@ namespace ScrapYard.UI
                         Updated?.Invoke(this, EventArgs.Empty);
                     }
                 }),
-                new DialogGUIButton("Cancel", () => { }));
+                //new DialogGUIButton("Cancel", () => { }));
+                new DialogGUIButton(Localizer.Format("#SYD-GUI-19"), () => { }));
             PopupDialog.SpawnPopupDialog(diag, false, HighLogic.UISkin);
         }
 

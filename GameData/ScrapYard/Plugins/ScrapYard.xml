@@ -1,0 +1,1344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScrapYard</name>
+    </assembly>
+    <members>
+        <member name="T:ScrapYard.APIManager">
+            <summary>
+            This is the remote-side of the API, where all calls through the wrapper funnel through.
+            It can also be referenced directly, and it is recommended that you interact with ScrapYard through these methods exclusively.
+            This may be required later on, with everything else being made internal (probably not, but it'd be better design)
+            </summary>
+        </member>
+        <member name="P:ScrapYard.APIManager.Instance">
+            <summary>
+            A static instance of the APIManager
+            </summary>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetPartsInInventory_Parts(System.Collections.Generic.IEnumerable{Part},System.String)">
+            <summary>
+            Takes a List of Parts and returns the Parts that are present in the inventory. 
+            </summary>
+            <param name="sourceParts">Source list of parts</param>
+            <param name="strictness">The strictness enum value name.</param>
+            <returns>List of Parts that are in the inventory</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetPartsInInventory_ConfigNodes(System.Collections.Generic.IEnumerable{ConfigNode},System.String)">
+            <summary>
+            Takes a List of part ConfigNodes and returns the ConfigNodes that are present in the inventory. 
+            Assumes the default strictness.
+            </summary>
+            <param name="sourceParts">Source list of parts</param>
+            <returns>List of part ConfigNodes that are in the inventory</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.AddPartsToInventory_Parts(System.Collections.Generic.IEnumerable{Part},System.Boolean)">
+            <summary>
+            Adds a list of parts to the Inventory
+            </summary>
+            <param name="parts">The list of parts to add</param>
+            <param name="incrementRecovery">If true, increments the number of recoveries in the tracker</param>
+        </member>
+        <member name="M:ScrapYard.APIManager.AddPartsToInventory_Nodes(System.Collections.Generic.IEnumerable{ConfigNode},System.Boolean)">
+            <summary>
+            Adds a list of parts to the Inventory
+            </summary>
+            <param name="parts">The list of parts to add</param>
+            <param name="incrementRecovery">If true, increments the number of recoveries in the tracker</param>
+        </member>
+        <member name="M:ScrapYard.APIManager.AddPartToInventory_Part(Part,System.Boolean)">
+            <summary>
+            Adds a single part to the inventory, increments the recovery tracker if specified
+            </summary>
+            <param name="sourcePart">The source part to add</param>
+            <param name="incrementRecovery">If true, increases the number of recoveries</param>
+            <returns>True if added, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.AddPartToInventory_Node(ConfigNode,System.Boolean)">
+            <summary>
+            Adds a single part to the inventory, increments the recovery tracker if specified
+            </summary>
+            <param name="sourcePart">The source part to add</param>
+            <param name="incrementRecovery">If true, increases the number of recoveries</param>
+            <returns>True if added, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.RemovePartFromInventory_Part(Part,System.String)">
+            <summary>
+            Removes a single part from the inventory.
+            </summary>
+            <param name="sourcePart">The part to remove.</param>
+            <param name="strictness">The strictness to use when searching for the appropriate part.</param>
+            <returns>True if removed, false otherwise.</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.RemovePartFromInventory_Node(ConfigNode,System.String)">
+            <summary>
+            Removes a single part from the inventory.
+            </summary>
+            <param name="sourcePart">The part to remove.</param>
+            <param name="strictness">The strictness to use when searching for the appropriate part.</param>
+            <returns>True if removed, false otherwise.</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.SellParts_Parts(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Sells/Discards the list of parts out of the inventory
+            </summary>
+            <param name="parts">The parts to sell</param>
+            <returns>The total value of the sale</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.SellParts_Nodes(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Sells/Discards the list of parts out of the inventory
+            </summary>
+            <param name="parts">The parts to sell</param>
+            <returns>The total value of the sale</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.FindInventoryPart_Part(Part,System.String)">
+            <summary>
+            Finds an InventoryPart for a given part
+            </summary>
+            <param name="sourcePart">The part to search for</param>
+            <param name="strictness">The strictness to use when searching for the part</param>
+            <returns>The ConfigNode for the InventoryPart, or null if not found</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.FindInventoryPart_Node(ConfigNode,System.String)">
+            <summary>
+            Finds an InventoryPart for a given part
+            </summary>
+            <param name="sourcePart">The part to search for</param>
+            <param name="strictness">The strictness to use when searching for the part</param>
+            <returns>The ConfigNode for the InventoryPart, or null if not found</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.FindInventoryPart_ID(System.String)">
+            <summary>
+            Finds an InventoryPart for a given ID
+            </summary>
+            <param name="id">The id of the part to search for.</param>
+            <returns>The ConfigNode for the InventoryPart, or null if not found</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetAllInventoryParts">
+            <summary>
+            Gets all parts in the inventory as a list of ConfigNodes
+            </summary>
+            <returns>The list of all inventory parts</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.RefreshPart_Node(ConfigNode)">
+            <summary>
+            Refreshes a part node to be fresh and not from the inventory
+            </summary>
+            <param name="partNode">The part to refresh</param>
+            <returns>Success</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.ProcessVessel_Parts(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Removes inventory parts, refunds funds, marks it as tracked
+            </summary>
+            <param name="parts">The vessel as a List of Parts</param>
+            <returns>True if processed, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.ProcessVessel_Nodes(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Removes inventory parts, refunds funds, marks it as tracked
+            </summary>
+            <param name="parts">The vessel as a List of Parts</param>
+            <returns>True if processed, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.RecordBuild_Parts(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Records a build in the part tracker
+            </summary>
+            <param name="parts">The vessel as a list of Parts.</param>
+        </member>
+        <member name="M:ScrapYard.APIManager.RecordBuild_Nodes(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Records a build in the part tracker
+            </summary>
+            <param name="parts">The vessel as a list of ConfigNodes.</param>
+        </member>
+        <member name="M:ScrapYard.APIManager.SetProcessedStatus_ID(System.String,System.Boolean)">
+            <summary>
+            Sets whether a vessel is tracked or not
+            </summary>
+            <param name="id">The ID of the vessel</param>
+            <param name="newStatus">The status to set</param>
+            <returns>The previous status</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetBuildCount_Part(Part,System.String)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="part">The part to check</param>
+            <param name="type">The type of build counter to check</param>
+            <returns>Number of builds for the part</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetBuildCount_Node(ConfigNode,System.String)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="partNode">The ConfigNode of the part to check</param>
+            <param name="type">The type of build counter to check</param>
+            <returns>Number of builds for the part</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetUseCount_Part(Part,System.String)">
+            <summary>
+            Gets the number of uses of a part
+            </summary>
+            <param name="part">The part to check</param>
+            <param name="type">The type of use counter to check</param>
+            <returns>Number of uses of the part</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetUseCount_Node(ConfigNode,System.String)">
+            <summary>
+            Gets the number of uses of a part
+            </summary>
+            <param name="partNode">The ConfigNode of the part to check</param>
+            <param name="type">The type of use counter to check</param>
+            <returns>Number of uses of the part</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetPartID_Part(Part)">
+            <summary>
+            Gets the unique ID for the current part.
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the ID of</param>
+            <returns>The part's ID (a uint) as a string or null if it can't be gotten</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetPartID_Node(ConfigNode)">
+            <summary>
+            Gets the unique ID for the current part.
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the ID of</param>
+            <returns>The part's ID (a uint) as a string or null if it can't be gotten</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetTimesUsed_Part(Part)">
+            <summary>
+            Gets the number of times a part has been recovered. 
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the TimesRecovered count of.</param>
+            <returns>The number of times the part has been recovered.</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetTimesUsed_Node(ConfigNode)">
+            <summary>
+            Gets the number of times a part has been recovered.
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the TimesRecovered count of.</param>
+            <returns>The number of times the part has been recovered.</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.PartIsFromInventory_Part(Part)">
+            <summary>
+            Checks if the part is pulled from the inventory or is new
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>True if from inventory, false if new</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.PartIsFromInventory_Node(ConfigNode)">
+            <summary>
+            Checks if the part is pulled from the inventory or is new
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>True if from inventory, false if new</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_PartBlacklist">
+            <summary>
+            Gets the list of blacklisted parts. This is readonly.
+            </summary>
+            <returns>A Read Only list of the blacklisted parts</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_AutoApplyInventory">
+            <summary>
+            Gets the value of the AutoApplyInventory setting
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.SetSetting_AutoApplyInventory(System.Boolean)">
+            <summary>
+            Sets the value of the AutoApplyInventory setting
+            </summary>
+            <param name="value">The value to set</param>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_ModEnabled">
+            <summary>
+            Gets the value of the ModEnabled save-specific setting for the current save
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_UseInventory">
+            <summary>
+            Gets the value of the UseInventory save-specific setting for the current save
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_UseTracker">
+            <summary>
+            Gets the value of the UseTracker save-specific setting for the current save
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_OverrideFunds">
+            <summary>
+            Gets the value of the OverrideFunds save-specific setting for the current save
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="M:ScrapYard.APIManager.GetSetting_FundsSalePercent">
+            <summary>
+            The percentage of funds returned for selling parts when OverrideFunds is active, for this save
+            </summary>
+            <returns>The value of the setting</returns>
+        </member>
+        <member name="T:ScrapYard.ScrapYardWrapper.TrackType">
+            <summary>
+            The part tracker type to reference
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.TrackType.TOTAL">
+            <summary>
+            Total number of builds/uses combining new and reused
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.TrackType.NEW">
+            <summary>
+            Only new builds/uses of the part
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.TrackType.INVENTORIED">
+            <summary>
+            Only reused builds/uses of the part
+            </summary>
+        </member>
+        <member name="T:ScrapYard.ScrapYardWrapper.ComparisonStrength">
+            <summary>
+            The strictness of comparing two parts for equivalency
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.ComparisonStrength.NAME">
+            <summary>
+            Equivalent if their names match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.ComparisonStrength.COSTS">
+            <summary>
+            EqualEquivalent if name and dry cost match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.ComparisonStrength.MODULES">
+            <summary>
+            Equaivalent if name, dry cost, and Modules (except ModuleSYPartTracker) match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.ComparisonStrength.TRACKER">
+            <summary>
+            Equivalent if name, dry cost, Modules, and TimesRecovered match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ScrapYardWrapper.ComparisonStrength.STRICT">
+            <summary>
+            Equivalent if name, dry cost, Modules, TimesRecovered and IDs match
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.Available">
+            <summary>
+            True if ScrapYard is available, false if not
+            </summary>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetPartsInInventory(System.Collections.Generic.IEnumerable{Part},ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Takes a List of Parts and returns the Parts that are present in the inventory. 
+            </summary>
+            <param name="sourceParts">Source list of parts</param>
+            <param name="strictness">How strict of a comparison to use. Defaults to MODULES</param>
+            <returns>List of Parts that are in the inventory</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetPartsInInventory(System.Collections.Generic.IEnumerable{ConfigNode},ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Takes a List of part ConfigNodes and returns the ConfigNodes that are present in the inventory. 
+            </summary>
+            <param name="sourceParts">Source list of parts</param>
+            <param name="strictness">How strict of a comparison to use. Defaults to MODULES</param>
+            <returns>List of part ConfigNodes that are in the inventory</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.AddPartsToInventory(System.Collections.Generic.IEnumerable{Part},System.Boolean)">
+            <summary>
+            Adds a list of parts to the Inventory
+            </summary>
+            <param name="parts">The list of parts to add</param>
+            <param name="incrementRecovery">If true, increments the number of recoveries in the tracker</param>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.AddPartsToInventory(System.Collections.Generic.IEnumerable{ConfigNode},System.Boolean)">
+            <summary>
+            Adds a list of parts to the Inventory
+            </summary>
+            <param name="parts">The list of parts to add</param>
+            <param name="incrementRecovery">If true, increments the number of recoveries in the tracker</param>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.AddPartToInventory(Part,System.Boolean)">
+            <summary>
+            Adds a part to the Inventory
+            </summary>
+            <param name="part">The part to add</param>
+            <param name="incrementRecovery">If true, increments the counter for how many times the part was recovered</param>
+            <returns>True if added, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.AddPartToInventory(ConfigNode,System.Boolean)">
+            <summary>
+            Adds a part to the Inventory
+            </summary>
+            <param name="part">The part to add</param>
+            <param name="incrementRecovery">If true, increments the counter for how many times the part was recovered</param>
+            <returns>True if added, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.RemovePartFromInventory(Part,ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Removes a part from the Inventory using the given strictness for finding the part
+            </summary>
+            <param name="part">The part to remove</param>
+            <param name="strictness">The strictenss to use when searching for the part. Defaults to MODULES</param>
+            <returns>True if removed, false otherwise.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.RemovePartFromInventory(ConfigNode,ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Removes a part from the Inventory using the given strictness for finding the part
+            </summary>
+            <param name="part">The part to remove</param>
+            <param name="strictness">The strictenss to use when searching for the part. Defaults to MODULES</param>
+            <returns>True if removed, false otherwise.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.SellParts(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Sells/Discards parts out of the inventory
+            </summary>
+            <param name="parts">The parts to sell</param>
+            <returns>The total value of the sale</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.SellParts(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Sells/Discards parts out of the inventory
+            </summary>
+            <param name="parts">The parts to sell</param>
+            <returns>The total value of the sale</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.FindInventoryPart(Part,ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Finds a part in the inventory for the given part
+            </summary>
+            <param name="part">The part to search for</param>
+            <param name="strictness">The strictness to use when searching for the part. Defaults to MODULES.</param>
+            <returns>A ConfigNode representing the InventoryPart, or null if none found.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.FindInventoryPart(ConfigNode,ScrapYard.ScrapYardWrapper.ComparisonStrength)">
+            <summary>
+            Finds a part in the inventory for the given part
+            </summary>
+            <param name="part">The part to search for</param>
+            <param name="strictness">The strictness to use when searching for the part. Defaults to MODULES.</param>
+            <returns>A ConfigNode representing the InventoryPart, or null if none found.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.FindInventoryPart(System.String)">
+            <summary>
+            Finds a part in the inventory for the given id
+            </summary>
+            <param name="id">The id of the part to search for.</param>
+            <returns>A ConfigNode representing the InventoryPart, or null if none found.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetAllInventoryParts">
+            <summary>
+            Gets all parts in the inventory as a list of ConfigNodes
+            </summary>
+            <returns>The list of all inventory parts</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.RefreshPart(ConfigNode)">
+            <summary>
+            Refreshes a part node to be fresh and not from the inventory
+            </summary>
+            <param name="partNode">The part to refresh</param>
+            <returns>Success</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.ProcessVessel(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Removes inventory parts, refunds funds, marks it as tracked
+            </summary>
+            <param name="parts">The vessel as a List of Parts</param>
+            <returns>True if processed, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.ProcessVessel(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Removes inventory parts, refunds funds, marks it as tracked
+            </summary>
+            <param name="parts">The vessel as a List of part ConfigNodes</param>
+            <returns>True if processed, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.RecordBuild(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Records a build in the part tracker
+            </summary>
+            <param name="parts">The vessel as a list of Parts.</param>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.RecordBuild(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Records a build in the part tracker
+            </summary>
+            <param name="parts">The vessel as a list of ConfigNodes.</param>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.SetProcessedStatus(System.String,System.Boolean)">
+            <summary>
+            Sets whether a vessel is tracked or not
+            </summary>
+            <param name="id">The ID of the vessel</param>
+            <param name="newStatus">The status to set</param>
+            <returns>The previous status</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetBuildCount(Part,ScrapYard.ScrapYardWrapper.TrackType)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>Number of builds for the part</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetBuildCount(ConfigNode,ScrapYard.ScrapYardWrapper.TrackType)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="partNode">The ConfigNode of the part to check</param>
+            <returns>Number of builds for the part</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetUseCount(Part,ScrapYard.ScrapYardWrapper.TrackType)">
+            <summary>
+            Gets the number of total uses of a part
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>Number of uses of the part</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetUseCount(ConfigNode,ScrapYard.ScrapYardWrapper.TrackType)">
+            <summary>
+            Gets the number of total uses of a part
+            </summary>
+            <param name="partNode">The ConfigNode of the part to check</param>
+            <returns>Number of uses of the part</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetPartID(Part)">
+            <summary>
+            Gets the unique ID for the current part.
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the ID of</param>
+            <returns>The part's ID (a Guid) as a string or null if it can't be gotten</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetPartID(ConfigNode)">
+            <summary>
+            Gets the unique ID for the current part.
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the ID of</param>
+            <returns>The part's ID (a Guid) as a string or null if it can't be gotten</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetTimesUsed(Part)">
+            <summary>
+            Gets the number of times a part has been recovered. 
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the TimesRecovered count of.</param>
+            <returns>The number of times the part has been recovered.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.GetTimesUsed(ConfigNode)">
+            <summary>
+            Gets the number of times a part has been recovered. 
+            It is recommended to cache this.
+            </summary>
+            <param name="part">The part to get the TimesRecovered count of.</param>
+            <returns>The number of times the part has been recovered.</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.PartIsFromInventory(Part)">
+            <summary>
+            Checks if the part is pulled from the inventory or is new
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>True if from inventory, false if new</returns>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.PartIsFromInventory(ConfigNode)">
+            <summary>
+            Checks if the part is pulled from the inventory or is new
+            </summary>
+            <param name="part">The part to check</param>
+            <returns>True if from inventory, false if new</returns>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.PartBlacklist">
+            <summary>
+            The list of part names that are blacklisted
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.AutoApplyInventory">
+            <summary>
+            Whether or not to automatically apply the inventory while building ships in the editor
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.ModEnabled">
+            <summary>
+            Whether the mod is enabled for this save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.UseInventory">
+            <summary>
+            Whether the inventory is in use for this save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.UseTracker">
+            <summary>
+            Whether the part use tracker is enabled for this save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.OverrideFunds">
+            <summary>
+            Whether the Override Funds option is in use for this save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.FundsSalePercent">
+            <summary>
+            The percentage of funds returned for selling parts when OverrideFunds is active, for this save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.ScrapYardWrapper.Instance">
+            <summary>
+            The static instance of the APIManager within ScrapYard
+            </summary>
+        </member>
+        <member name="M:ScrapYard.ScrapYardWrapper.invokeMethod(System.String,System.Object[])">
+            <summary>
+            Invokes a method on the ScrapYard API
+            </summary>
+            <param name="methodName">The name of the method</param>
+            <param name="parameters">Parameters to pass to the method</param>
+            <returns>The response</returns>
+        </member>
+        <member name="T:ScrapYard.ComparisonStrength">
+            <summary>
+            The strictness of comparing two parts for equivalency
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ComparisonStrength.NAME">
+            <summary>
+            Equivalent if their names match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ComparisonStrength.COSTS">
+            <summary>
+            EqualEquivalent if name and dry cost match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ComparisonStrength.MODULES">
+            <summary>
+            Equivalent if name, dry cost, and Modules (except ModuleSYPartTracker) match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ComparisonStrength.TRACKER">
+            <summary>
+            Equivalent if name, dry cost, Modules, and TimesRecovered match
+            </summary>
+        </member>
+        <member name="F:ScrapYard.ComparisonStrength.STRICT">
+            <summary>
+            Equivalent if name, dry cost, Modules, TimesRecovered and IDs match
+            </summary>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.#ctor">
+            <summary>
+            Creates an empty InventoryPart.
+            </summary>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.#ctor(Part)">
+            <summary>
+            Create an InventoryPart from an origin Part, extracting the name, dry cost, and relevant MODULEs
+            </summary>
+            <param name="originPart">The <see cref="T:Part"/> used as the basis of the <see cref="T:ScrapYard.InventoryPart"/>.</param>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.#ctor(ProtoPartSnapshot)">
+            <summary>
+            Create an InventoryPart from an origin ProtoPartSnapshot, extracting the name, dry cost, and relevant MODULEs
+            </summary>
+            <param name="originPartSnapshot">The <see cref="T:ProtoPartSnapshot"/> to use as the basis of the <see cref="T:ScrapYard.InventoryPart"/>.</param>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.#ctor(ConfigNode)">
+            <summary>
+            Create an InventoryPart from an origin ConfigNode, extracting the name, dry cost, and relevant MODULEs
+            </summary>
+            <param name="originPartConfigNode">The <see cref="T:ConfigNode"/> to use as the basis of the <see cref="T:ScrapYard.InventoryPart"/>.</param>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.IsSameAs(ScrapYard.InventoryPart,ScrapYard.ComparisonStrength)">
+            <summary>
+            Checks to see if the passed InventoryPart is identical to this one, for a given strictness of "identical"
+            </summary>
+            <param name="comparedPart">The part to compare to</param>
+            <param name="strictness">The strength of the comparison (just name? modules? everything?)</param>
+            <returns>True if mathing, false otherwise</returns>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.ToPart">
+            <summary>
+            Converts the InventoryPart into a Part using the stored modules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.FullyApplyToPart(Part)">
+            <summary>
+            Fully applies stored modules to the provided part
+            </summary>
+            <param name="part">The Part to apply onto</param>
+            <returns>True if part is the right type</returns>
+        </member>
+        <member name="M:ScrapYard.InventoryPart.ListModules">
+            <summary>
+            Gets the list of saved modules on the part
+            </summary>
+            <returns>The list of saved modules</returns>
+        </member>
+        <member name="P:ScrapYard.InventoryPart.State">
+            <summary>
+            Gets the ConfigNode version of the InventoryPart, or sets the state of the InventoryPart from a ConfigNode
+            </summary>
+        </member>
+        <member name="T:ScrapYard.Modules.ModuleSYPartTracker">
+            <summary>
+            Applied to individual parts, it tracks how often that part has been used. Added and/or incremented by one each recovery.
+            Strict comparisons between parts with different values will fail, but semi-soft comparisons will ignore this
+            </summary>
+        </member>
+        <member name="M:ScrapYard.Modules.TrackerModuleWrapper.#ctor(ConfigNode)">
+            <summary>
+            Creates a new wrapper around the ModuleSYPartTracker ConfigNode
+            </summary>
+            <param name="trackerConfigNode">The ModuleSYPartTracker ConfigNode</param>
+        </member>
+        <member name="M:ScrapYard.Modules.TrackerModuleWrapper.#ctor(System.UInt32,System.Int32,System.Boolean)">
+            <summary>
+            Creates a new wrapper for the ModuleSYPartTracker, without the actual backing ConfigNode
+            </summary>
+            <param name="id">The ID</param>
+            <param name="recovered">The number of times recovered</param>
+            <param name="inventoried">Whether the part is from the inventory</param>
+        </member>
+        <member name="P:ScrapYard.Modules.TrackerModuleWrapper.HasModule">
+            <summary>
+            True if the wrapper has an actual module applied
+            </summary>
+        </member>
+        <member name="P:ScrapYard.Modules.TrackerModuleWrapper.ID">
+            <summary>
+            The unique ID for this part
+            </summary>
+        </member>
+        <member name="P:ScrapYard.Modules.TrackerModuleWrapper.TimesRecovered">
+            <summary>
+            The number of times this part has been recovered
+            </summary>
+        </member>
+        <member name="P:ScrapYard.Modules.TrackerModuleWrapper.Inventoried">
+            <summary>
+            True if the part has been in the inventory, false if it is new
+            </summary>
+        </member>
+        <member name="M:ScrapYard.ModuleTemplate.NameMatches(System.String)">
+            <summary>
+            Checks if the provided name matches the template
+            </summary>
+            <param name="name">Name to check</param>
+            <returns>True if the name matches the template</returns>
+        </member>
+        <member name="M:ScrapYard.ModuleTemplateList.FindMatchingTemplate(System.String,ConfigNode)">
+            <summary>
+            Checks the list for a matching template and returns it if found
+            </summary>
+            <param name="moduleNode">A PartModule ConfigNode</param>
+            <returns>The matching template or null if no match</returns>
+        </member>
+        <member name="M:ScrapYard.ModuleTemplateList.MatchByName(System.String)">
+            <summary>
+            Checks if there are any modules that match by name only
+            </summary>
+            <param name="moduleName">Name of the module to check for</param>
+            <returns>True if there are any modules whose name requirement matches.</returns>
+        </member>
+        <member name="M:ScrapYard.ModuleTemplateList.CheckForMatch(System.String,ConfigNode)">
+            <summary>
+            Checks if any templates match
+            </summary>
+            <param name="moduleNode">The PartModule ConfigNode</param>
+            <returns>True if a match is found, false otherwise</returns>
+        </member>
+        <member name="P:ScrapYard.PartInventory.InventoryEnabled">
+            <summary>
+            Determines if the Inventory feature is enabled for this save
+            </summary>
+        </member>
+        <member name="M:ScrapYard.PartInventory.#ctor">
+            <summary>
+            Creates a new empty part inventory
+            </summary>
+        </member>
+        <member name="M:ScrapYard.PartInventory.#ctor(System.Boolean)">
+            <summary>
+            Creates a new PartInventory that doesn't trigger events when the inventory changes
+            </summary>
+            <param name="DisableEvents">Disables event firing if true.</param>
+        </member>
+        <member name="M:ScrapYard.PartInventory.AddPart(ScrapYard.InventoryPart)">
+            <summary>
+            Adds a part to the inventory using an InventoryPart
+            </summary>
+            <param name="part">The Inventory Part to add</param>
+        </member>
+        <member name="M:ScrapYard.PartInventory.AddPart(Part)">
+            <summary>
+            Adds a part to the inventory using a Part
+            </summary>
+            <param name="part">The Part to add</param>
+        </member>
+        <member name="M:ScrapYard.PartInventory.AddPart(ProtoPartSnapshot)">
+            <summary>
+            Adds a part to the inventory using a ProtoPartSnapshot
+            </summary>
+            <param name="protoPartSnapshot">The ProtoPartSnapshot to add</param>
+        </member>
+        <member name="M:ScrapYard.PartInventory.AddPart(ConfigNode)">
+            <summary>
+            Adds a part to the inventory using a ConfigNode of a Part
+            </summary>
+            <param name="partNode">The ConfigNode to add</param>
+        </member>
+        <member name="M:ScrapYard.PartInventory.FindPart(System.UInt32)">
+            <summary>
+            Finds a part in the inventory for the given id (ModuleSYPartTracker)
+            </summary>
+            <param name="id">The ID to search for</param>
+            <returns>The stored InventoryPart or null if not found</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.FindPart(ScrapYard.InventoryPart,ScrapYard.ComparisonStrength)">
+            <summary>
+            Finds a part in the inventory for the given InventoryPart and a strictness of comparison
+            </summary>
+            <param name="part">The source part to find a match for</param>
+            <param name="strength">The strictness of the comparison. Defaults to MODULES.</param>
+            <returns>The InventoryPart or null if not found.</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.FindParts(ScrapYard.InventoryPart,ScrapYard.ComparisonStrength)">
+            <summary>
+            Finds all parts in the inventory for the given InventoryPart and the provided strictness
+            </summary>
+            <param name="part">The source part to find a match for</param>
+            <param name="strength">The strictness of the comparison. Defaults to MODULES.</param>
+            <returns>An IEnumerable of InventoryParts that match</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.FindPartsByName(System.String)">
+            <summary>
+            Gets a list of all parts in the inventory with the given name.
+            </summary>
+            <param name="name">The name to search for</param>
+            <returns>An IEnumerable of all InventoryParts with that name</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.GetAllParts">
+            <summary>
+            Returns an IEnumerable with all parts in the Inventory
+            </summary>
+            <returns>All inventory parts in an IEnumerable</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.RemovePart(ScrapYard.InventoryPart,ScrapYard.ComparisonStrength)">
+            <summary>
+            Removes a part from the inventory given an InventoryPart to compare and the strictness of comparison
+            </summary>
+            <param name="part">The source part to find a match for</param>
+            <param name="strength">The strictness of the comparison. Defaults to MODULES</param>
+            <returns>The removed InventoryPart, or null if none found</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.RemovePart(System.UInt32)">
+            <summary>
+            Removes a part with the given ID
+            </summary>
+            <param name="id">The ID of the part to remove</param>
+            <returns>The removed InventoryPart, or null if none found</returns>
+        </member>
+        <member name="M:ScrapYard.PartInventory.Copy(System.Boolean)">
+            <summary>
+            Copies the PartInventory to a new PartInventory
+            </summary>
+            <param name="disableEventsOnCopy">If true, the copy will not fire events</param>
+            <returns>A copy of the PartInventory</returns>
+        </member>
+        <member name="P:ScrapYard.PartInventory.State">
+            <summary>
+            Returns a ConfigNode representing the current state, or sets the state from a ConfigNode
+            </summary>
+        </member>
+        <member name="M:ScrapYard.PartTracker.AddBuild(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Takes a list of parts and registers it as a build
+            </summary>
+            <param name="parts">The vessel as a list of parts</param>
+        </member>
+        <member name="M:ScrapYard.PartTracker.AddBuild(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Takes a list of part ConfigNodes and registers it as a build
+            </summary>
+            <param name="parts">The vessel as a list of part ConfigNodes</param>
+        </member>
+        <member name="M:ScrapYard.PartTracker.GetBuildsForPart(Part,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="part">The part to check</param>
+            /// <param name="type">Which build counter to check</param>
+            <returns>Number of builds</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.GetBuildsForPart(ConfigNode,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of builds for a part
+            </summary>
+            <param name="part">The part to check</param>
+            /// <param name="type">Which build counter to check</param>
+            <returns>Number of builds</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.GetUsesForPart(Part,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of uses of a part
+            </summary>
+            <param name="part">The part to check</param>
+            /// <param name="type">Which use counter to check</param>
+            <returns>Number of uses</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.GetUsesForPart(ConfigNode,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of uses of a part
+            </summary>
+            <param name="part">The part to check</param>
+            <param name="type">Which use counter to check</param>
+            <returns>Number of uses</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.addUse(ScrapYard.InventoryPart)">
+            <summary>
+            Adds a single use to the useTracker. Automatically determines type
+            </summary>
+            <param name="source">The InventoryPart to increment</param>
+            <returns>The corresponding InventoryPart that's actually stored</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.addBuild(ScrapYard.InventoryPart,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Adds a single build to the buildTracker
+            </summary>
+            <param name="source">The InventoryPart to increment</param>
+            <param name="typeToAdd">Says whether this is a new build, inventoried build, or combo build (TOTAL)</param>
+            <returns>The corresponding InventoryPart that's actually stored</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.getBuilds(ScrapYard.InventoryPart,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of builds for an InventoryPart
+            </summary>
+            <param name="part">Part to get builds for</param>
+            <returns>Number of builds</returns>
+        </member>
+        <member name="M:ScrapYard.PartTracker.getUses(ScrapYard.InventoryPart,ScrapYard.PartTracker.TrackType)">
+            <summary>
+            Gets the number of uses for an InventoryPart
+            </summary>
+            <param name="part">Part to get uses for</param>
+            <returns>Number of uses</returns>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.BasicRefurb">
+            <summary>
+            Basic Refurbishment resets some values on the module when the part is added to the inventory.
+            Things like repacking a parachute, resetting a fairing's deployed state, etc
+            </summary>
+        </member>
+        <member name="M:ScrapYard.Refurbishment.ValueModifier.BreakPath(System.String)">
+            <summary>
+            Breaks the full path into its tree and name. Uses periods, butI worry about that not always working
+            </summary>
+            <param name="fullPath"></param>
+        </member>
+        <member name="M:ScrapYard.Refurbishment.ValueModifier.PerformOperation(ConfigNode)">
+            <summary>
+            Performs the operation on the passed in module
+            </summary>
+            <param name="moduleNode">The module to operate on</param>
+            <returns>Success</returns>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.ValueAdd">
+            <summary>
+            Adds a value to a ConfigNode
+            </summary>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.NodeAdd">
+            <summary>
+            Adds a node to a ConfigNode
+            </summary>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.ValueSet">
+            <summary>
+            Sets a value on a ConfigNode
+            </summary>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.ValueRemove">
+            <summary>
+            Removes a value from a ConfigNode
+            </summary>
+        </member>
+        <member name="T:ScrapYard.Refurbishment.NodeRemove">
+            <summary>
+            Removes a node from a ConfigNode
+            </summary>
+        </member>
+        <member name="P:ScrapYard.GlobalSettings.CurrentSaveSettings">
+            <summary>
+            Settings for the current save
+            </summary>
+        </member>
+        <member name="P:ScrapYard.GlobalSettings.EnabledForSave">
+            <summary>
+            Returns whether ScrapYard is enabled for the save
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.InstanceModulesVM.GetModules">
+            <summary>
+            Gets the list of all saved modules on the backing part
+            </summary>
+            <returns>The list of saved modules</returns>
+        </member>
+        <member name="M:ScrapYard.UI.InstanceSelectorVM.DisablePartDropping">
+            <summary>
+            Forcibly disables the ability to drop parts in the editor
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.InstanceSelectorVM.RestorePartDropping">
+            <summary>
+            Forcibly restores the ability to drop parts in the editor
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.InstanceSelectorVM.leastToMostSorter(System.Collections.Generic.List{ScrapYard.UI.PartInstance},System.Collections.Generic.List{ScrapYard.UI.PartInstance})">
+            <summary>
+            Sorts the part instances from least to most uses
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns>-1 if a is used less, 0 if equal, 1 if a is used more</returns>
+        </member>
+        <member name="F:ScrapYard.UI.WindowBase.OnMouseOver">
+            <summary>
+            Fires when the mouse enters the window
+            </summary>
+        </member>
+        <member name="F:ScrapYard.UI.WindowBase.OnMouseExit">
+            <summary>
+            Fires when the mouse leaves the window
+            </summary>
+        </member>
+        <member name="P:ScrapYard.UI.WindowBase.MouseIsOver">
+            <summary>
+            Returns true if the mouse is over the window.
+            Setting this will fire OnMouseOver and OnMouseExit events.
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.Close">
+            <summary>
+            Makes the window not visible
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.Show">
+            <summary>
+            Causes the window to be visible
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.Draw(System.Int32)">
+            <summary>
+            Draws the window
+            </summary>
+            <param name="windowID">The window's id</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.OnGUIHandler">
+            <summary>
+            Handles all drawing of the window and handling of the Rect object. Call from OnGUI and magic happens.
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.SetResizeable(System.Boolean,System.Boolean)">
+            <summary>
+            Sets whether the window can be resized
+            </summary>
+            <param name="vertical">Set true to allow vertically resizing</param>
+            <param name="horizontal">Set true to allow horizontally resizing</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.SetSize(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Sets the size of the window
+            </summary>
+            <param name="left">The left edge of the window</param>
+            <param name="top">The top edge of the window</param>
+            <param name="width">The window width</param>
+            <param name="height">The window height</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.MinimizeHeight">
+            <summary>
+            Sets the height of the window to 1 so it can automatically resize to the correct height
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.SetVisibleScenes(System.Collections.Generic.IEnumerable{GameScenes})">
+            <summary>
+            Sets the scenes that this window should be visible in
+            </summary>
+            <param name="scenes">Enumerable of scenes</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.SetVisibleScenes(GameScenes[])">
+            <summary>
+            Sets the scenes that this window should be visible in
+            </summary>
+            <param name="scenes">Params array of scenes</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.dragWindow">
+            <summary>
+            Makes the window draggable
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.centerWindow">
+            <summary>
+            Centers the window
+            </summary>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.SavePosition(System.Boolean)">
+            <summary>
+            Saves the position and visibility to a ConfigNode
+            </summary>
+            <returns>A ConfigNode with the position and visibility data</returns>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.LoadPosition(ConfigNode)">
+            <summary>
+            Loads the position and visibility info from a confignode
+            </summary>
+            <param name="posNode">The position node</param>
+        </member>
+        <member name="M:ScrapYard.UI.WindowBase.checkMouseOver">
+            <summary>
+            Checks to see if the mouse is over the window.
+            Requires the window to be visible
+            </summary>
+            <returns>True if over the window, false otherwise.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.ReplaceMathVariables(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Replace all instances of variables with their provided values
+            </summary>
+            <param name="identifier">An identifier for the string</param>
+            <param name="input">The string to replace variables on</param>
+            <param name="variables">The Dictionary containing the variables and their values</param>
+            <returns>A string with the variables replaced</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.ParseMath(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Takes a string and evaluates it as a mathematical expression, replacing any variables "ie, [X]" with the provided values
+            </summary>
+            <param name="identifier">An identifier for the string</param>
+            <param name="input">The string to evaluate</param>
+            <param name="variables">The Dictionary containing the variables and their values</param>
+            <returns>The result of the evaluation</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.FindEndParenthesis(System.String,System.Int32)">
+            <summary>
+            Locates the terminating paranthesis for the given position. Also finds the location of any commas (for max, min, etc)
+            </summary>
+            <param name="str">The string to search</param>
+            <param name="curPos">The current position in the string</param>
+            <returns>An int[2] of the end position and the location of any appropriate comma.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.DoMath(System.Double,System.String,System.String)">
+            <summary>
+            Takes the current value and performs the requested operation on it
+            </summary>
+            <param name="currentVal">The current value</param>
+            <param name="operation">The operation to perform</param>
+            <param name="newVal">The new value string to "add" to the current value</param>
+            <returns>The new value after the operation</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.DoIfStatement(System.String)">
+            <summary>
+            Performs parsing of inline if statements
+            </summary>
+            <param name="statement">The statement string to act on</param>
+            <returns>The result of the if statement</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.ConfigNodeUtils.PartNameFromNode(ConfigNode)">
+            <summary>
+            Returns the internal name of a part given a valid ConfigNode of the part. Parts saved to a craft file are saved as "part = $partname_$idNumber", 
+            while parts from an active Vessel are saved as "name = $partname". This can handle both situations
+            </summary>
+            <param name="part">The <see cref="T:ConfigNode"/> form of the part whose name you want.</param>
+            <returns>The name of the <see cref="T:Part"/></returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.ConfigNodeUtils.AvailablePartFromNode(ConfigNode)">
+            <summary>
+            Finds an AvailablePart from the LoadedPartsList based on the part name stored in the ConfigNode
+            </summary>
+            <param name="part">The <see cref="T:ConfigNode"/> form of the part you want the <see cref="T:AvailablePart"/> of.</param>
+            <returns>An <see cref="T:AvailablePart"/> for the given part.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.ConfigNodeUtils.IsIdenticalTo(ConfigNode,ConfigNode)">
+            <summary>
+            Checks two <see cref="T:ConfigNode"/>s to see if they are identical.
+            </summary>
+            <param name="node1">The first <see cref="T:ConfigNode"/></param>
+            <param name="node2">The second <see cref="T:ConfigNode"/></param>
+            <returns>True if identical, false if not.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.ConfigNodeUtils.GetModuleNode(ConfigNode,System.String)">
+            <summary>
+            Extracts a Module node from a Part node
+            </summary>
+            <param name="partNode">The part ConfigNode</param>
+            <param name="moduleName">The module to extract</param>
+            <returns>The Module node or null if could not be found</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.EditorApplySpecialCases.TweakScale(Part,PartModule,ConfigNode)">
+            <summary>
+            Updates a TweakScale module to act as if the correct scaling was set by the user.
+            Forces a proper rescaling
+            </summary>
+            <param name="part">The part being acted on</param>
+            <param name="defaultModule">The module from the partPrefab</param>
+            <param name="copyNode">The ConfigNode to copy info from</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.EditorHandling.VerifyEditorShip">
+            <summary>
+            Verifies that the inventory parts on the ship in the editor are valid
+            </summary>
+        </member>
+        <member name="M:ScrapYard.Utilities.EditorHandling.UpdateCostUI">
+            <summary>
+            Updates the cost UI with the cached cost value
+            </summary>
+        </member>
+        <member name="M:ScrapYard.Utilities.EditorHandling.UpdateCostUI(System.Single)">
+            <summary>
+            Updates the cost UI with the provided value and caches it
+            </summary>
+            <param name="cost">The new cost value</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.EditorHandling.FilterOutUsedParts(System.Collections.Generic.IEnumerable{ScrapYard.InventoryPart})">
+            <summary>
+            Takes a list of InventoryParts and removes any that are in use by the current vessel
+            </summary>
+            <param name="sourceList">The list of parts to search in</param>
+            <returns>A List of parts that aren't being used</returns>
+        </member>
+        <member name="T:ScrapYard.Utilities.InventoryManagement">
+            <summary>
+            Various utility functions for interacting with the inventory on an entire Vessel basis
+            </summary>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.SplitParts(System.Collections.Generic.IEnumerable{Part},System.Collections.Generic.IList{ScrapYard.InventoryPart}@,System.Collections.Generic.IList{ScrapYard.InventoryPart}@)">
+            <summary>
+            Splits a list of parts into a list of those that are in the inventory and those that are not
+            </summary>
+            <param name="input"></param>
+            <param name="inInventory"></param>
+            <param name="notInInventory"></param>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.ApplyInventoryToVessel(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Applies the inventory to a vessel, specifically the part tracker module. Happens in the Editor
+            </summary>
+            <param name="input">The vessel as a list of parts</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.ApplyInventoryToVessel(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Applies the inventory to a vessel, specifically the part tracker module. Happens in the Editor
+            </summary>
+            <param name="input">The vessel as a list of part ConfigNodes</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.SellParts(System.Collections.Generic.IEnumerable{ScrapYard.InventoryPart})">
+            <summary>
+            Sells/Discards parts from the inventory. Removes the parts from the inventory and refunds the correct amount.
+            </summary>
+            <param name="parts">The parts to sell</param>
+            <returns>The total value of the sale</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.RemovePartsFromInventory(System.Collections.Generic.IEnumerable{Part})">
+            <summary>
+            Removes any inventory parts from the inventory (vessel rollout, KCT construction)
+            </summary>
+            <param name="input">The vessel as a list of parts.</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.InventoryManagement.RemovePartsFromInventory(System.Collections.Generic.IEnumerable{ConfigNode})">
+            <summary>
+            Removes any inventory parts from the inventory (vessel rollout, KCT construction)
+            </summary>
+            <param name="input">The vessel as a list of part ConfigNodes.</param>
+        </member>
+        <member name="M:ScrapYard.Utilities.Utils.AvailablePartFromName(System.String)">
+            <summary>
+            Finds an AvailablePart from the LoadedPartsList based on the provided part name
+            </summary>
+            <param name="name">The name of the part.</param>
+            <returns>An <see cref="T:AvailablePart"/> for the given name.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.Utils.StringToGuid(System.String)">
+            <summary>
+            Safely converts a string to a "Guid?" Is fine with null, empty string, or things that throw exceptions when parsed
+            </summary>
+            <param name="guidString">The Guid string</param>
+            <returns>Either a Guid or null</returns>
+        </member>
+        <member name="M:ScrapYard.Logging.DebugLog(System.Object,ScrapYard.Logging.LogType)">
+            <summary>
+            Logs the provided message only if built in Debug mode
+            </summary>
+            <param name="msg">The object to log</param>
+            <param name="type">The type of message being logged (severity)</param>
+        </member>
+        <member name="M:ScrapYard.Logging.Log(System.Object,ScrapYard.Logging.LogType)">
+            <summary>
+            Logs the provided message
+            </summary>
+            <param name="msg">The object to log</param>
+            <param name="type">The type of message being logged (severity)</param>
+        </member>
+        <member name="M:ScrapYard.Logging.LogException(System.Exception)">
+            <summary>
+            Logs the provided Exception
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="T:ScrapYard.VesselTracker">
+            <summary>
+            Tracks whether a vessel (identified by a uint) has had parts removed already
+            </summary>
+        </member>
+        <member name="M:ScrapYard.VesselTracker.TrackVessel(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Adds or replaces a vessel in the tracker.
+            </summary>
+            <param name="vesselID">The ID of the vessel to track.</param>
+            <param name="partsProcessed">Whether the vessel has been processed. Defaults to false.</param>
+            <returns>The previous state of the vessel in the tracker.</returns>
+        </member>
+        <member name="M:ScrapYard.VesselTracker.IsProcessed(System.Nullable{System.UInt32})">
+            <summary>
+            Returns whether the given vessel has been processed.
+            </summary>
+            <param name="vesselID">The ID of the vessel to check.</param>
+            <returns>True if processed, false if not or not tracked.</returns>
+        </member>
+        <member name="M:ScrapYard.VesselTracker.GetOrAdd(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Gets whether the vessel has been processed, or adds it to the tracker with the provided state
+            </summary>
+            <param name="vesselID">The vessel to check or add</param>
+            <param name="partsProcessed">The value to store if not present</param>
+            <returns>The value if in the tracker, or the provided value if added.</returns>
+        </member>
+        <member name="M:ScrapYard.VesselTracker.Remove(System.Nullable{System.UInt32})">
+            <summary>
+            Removes a vessel from the tracker (typically when launched).
+            </summary>
+            <param name="vesselID">The vessel to remove</param>
+            <returns>True if removed, false otherwise.</returns>
+        </member>
+        <member name="P:ScrapYard.VesselTracker.State">
+            <summary>
+            Returns a ConfigNode representing the current state, or sets the state from a ConfigNode
+            </summary>
+        </member>
+    </members>
+</doc>

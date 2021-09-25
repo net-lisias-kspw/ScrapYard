@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KSP.Localization;
 
 namespace ScrapYard.Modules
 {
@@ -77,12 +78,17 @@ namespace ScrapYard.Modules
         {
             if (Inventoried)
             {
-                string use = TimesRecovered != 1 ? "Uses" : "Use";
-                ScrapYard = $"{TimesRecovered} Previous {use}";
+
+                string _0 = Localizer.Format("#SYD-GUI-0");
+                string _1 = Localizer.Format("#SYD-GUI-1");
+                //string use = TimesRecovered != 1 ? Localizer.Format("#SYD-GUI-0") : Localizer.Format("#SYD-GUI-1");
+                string use = TimesRecovered != 1 ? _0 : _1;
+                //ScrapYard = $"{TimesRecovered} Previous {use}";
+                ScrapYard = Localizer.Format("#SYD-GUI-2", TimesRecovered, use);
             }
             else
             {
-                ScrapYard = "Part Is New";
+                ScrapYard = Localizer.Format("#SYD-GUI-3");
             }
             //ScrapYard += $" {ID}";
         }

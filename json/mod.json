@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
  "label": "ScrapYard",
- "labelColor": "darkgreen",
- "message": "2.2.0.0",
- "color": "orange",
+ "labelColor": "BADA55",
+ "message": "2.2.1.0",
+ "color": "darkgreen",
  "style": "plastic"
 }

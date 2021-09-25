@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KSP.Localization;
 
 namespace ScrapYard.UI
 {
     public class InstanceSelectorVM
     {
-        private const string DEFAULT_PART_TITLE = "No Part Active";
+        //private const string DEFAULT_PART_TITLE = "No Part Active";
+        private const string DEFAULT_PART_TITLE = "#SYD-GUI-9";
         private Part _cachedBasePart;
         private Part _cachedApplyPart;
         private PartInventory _cachedInventory;
@@ -25,18 +27,21 @@ namespace ScrapYard.UI
             {
                 _cachedBasePart = value;
                 BackingPartName = value?.partInfo.name;
-                SelectedPartName = value?.partInfo.title ?? DEFAULT_PART_TITLE;
+                //SelectedPartName = value?.partInfo.title ?? DEFAULT_PART_TITLE;
+                SelectedPartName = value?.partInfo.title ?? Localizer.Format("#SYD-GUI-9");
                 UpdatePartList();
             }
         }
         public Part ApplyPart
         {
-            get { return _cachedApplyPart; } private set { _cachedApplyPart = value; }
+            get { return _cachedApplyPart; }
+            private set { _cachedApplyPart = value; }
         }
 
         public string BackingPartName { get; set; }
 
-        public string SelectedPartName { get; set; } = DEFAULT_PART_TITLE;
+        //public string SelectedPartName { get; set; } = DEFAULT_PART_TITLE;
+        public string SelectedPartName { get; set; } = Localizer.Format("#SYD-GUI-9");
 
         public List<List<PartInstance>> Parts { get; set; }
 
@@ -110,18 +115,20 @@ namespace ScrapYard.UI
         public void OnMouseOver()
         {
             //set a lock
-            EditorLogic.fetch?.Lock(true, true, true, "ScrapYard_EditorLock");   
+            //EditorLogic.fetch?.Lock(true, true, true, "#SYD-GUI-10");
+            EditorLogic.fetch?.Lock(true, true, true, "ScrapYard_EditorLock");
         }
 
         public void OnMouseExit()
         {
             //remove a lock
+            //EditorLogic.fetch?.Unlock("#SYD-GUI-10");
             EditorLogic.fetch?.Unlock("ScrapYard_EditorLock");
         }
 
         private void Instance_Updated(object sender, EventArgs e)
         {
-            UpdatePartList();   
+            UpdatePartList();
         }
 
 
@@ -211,9 +218,9 @@ namespace ScrapYard.UI
                     on_partDropped.OnCheckCondition = on_partDropped_Backup;
                     on_partDropped_Backup = null;
                     Logging.DebugLog("Restored on_partDropped");
-                    
+
                 }
-                
+
             }
         }
 

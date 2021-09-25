@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KSP.Localization;
 
 namespace ScrapYard
 {
@@ -27,7 +28,7 @@ namespace ScrapYard
         {
             get
             {
-                return "ScrapYard";
+                return "#SYD-settings-SectionName"; // "ScrapYard";
             }
         }
 
@@ -43,7 +44,7 @@ namespace ScrapYard
         {
             get
             {
-                return "ScrapYard";
+                return "#SYD-settings-Title"; //"ScrapYard";
             }
         }
 
@@ -51,29 +52,32 @@ namespace ScrapYard
         {
             get
             {
-                return Title;
+                return "#SYD-settings-DisplaySection"; // Title;
             }
         }
 
-        [GameParameters.CustomParameterUI("Mod Enabled", toolTip = "Uncheck this to disable ScrapYard for this save.")]
+        [GameParameters.CustomParameterUI("#SYD-settings-ModEnabled", toolTip = "#SYD-settings-ModEnabled-Tip")]
         public bool ModEnabled = true;
 
-        [GameParameters.CustomParameterUI("Enable Inventory", toolTip = "Uncheck this to disable the part inventory entirely.")]
+        [GameParameters.CustomParameterUI("#SYD-settings-UseInventory", toolTip = "#SYD-settings-UseInventory#SYD-settings-UseInventory-Tip")]
         public bool UseInventory = true;
 
-        [GameParameters.CustomParameterUI("Enable Part Tracker", toolTip = "Uncheck this to disable the part tracker entirely.")]
+        [GameParameters.CustomParameterUI("#SYD-settings-UseTracker", toolTip = "#SYD-settings-UseTracker-Tip")]
         public bool UseTracker = true;
 
-        [GameParameters.CustomParameterUI("Override Funds (WIP)", toolTip = "Enable this to make it so pulling parts from the inventory reduces costs, but recovery costs funds.\nStill under development.")]
+        [GameParameters.CustomParameterUI("#SYD-settings-OverrideFunds", toolTip = "#SYD-settings-OverrideFunds-Tip")]
         public bool OverrideFunds = false;
 
-        [GameParameters.CustomIntParameterUI("Sale Percentage", toolTip = "When overriding funds, defines the percentage you get back from selling used parts.", minValue = 0, maxValue = 100, stepSize = 1)]
+        [GameParameters.CustomIntParameterUI("#SYD-settings-FundsSalePercent", toolTip = "#SYD-settings-FundsSalePercent-Tip", minValue = 0, maxValue = 100, stepSize = 1)]
         public int FundsSalePercent = 100;
 
-        [GameParameters.CustomParameterUI("Debug Logging", toolTip = "Enabling this turns on debug logging, which provides additional information in the KSP log for ScrapYard.")]
+        [GameParameters.CustomParameterUI("#SYD-settings-DebugLogging", toolTip = "#SYD-settings-DebugLogging-Tip")]
         public bool DebugLogging = false;
 
-        [GameParameters.CustomIntParameterUI("Editor Recalculation Frequency", toolTip = "The minimum number of tenths of seconds between verification of the ship in the editor.", minValue = 2, maxValue = 100, stepSize = 2)]
+        [GameParameters.CustomIntParameterUI("#SYD-settings-RefreshTime", toolTip = "#SYD-settings-RefreshTime-Tip", minValue = 2, maxValue = 100, stepSize = 2)]
         public int RefreshTime = 10;
+
+        [GameParameters.CustomParameterUI("#SYD-settings-CPAW", toolTip = "#SYD-settings-CPAW-Tip")]
+        public bool coloredPAW = true;
     }
 }
