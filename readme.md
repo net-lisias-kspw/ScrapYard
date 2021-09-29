@@ -115,7 +115,6 @@ A common part inventory mod for Kerbal Space Program
 - Use  
 [![CKAN][CKAN:img]][CKAN:url]
 
-
 ### Dependencies  
 
 - [x]  [Kerbal Space Program][KSP:url] [![][KSP:shld]][KSP:url] [^1]  
@@ -199,7 +198,6 @@ A common part inventory mod for Kerbal Space Program
 
 - [@`SiriusSam`][LINK:siriussame] for the original idea of creating a separate part inventory way back in 2014 and for the name
 - [@`enneract`][LINK:enneract] for discussion and design help.
-- [@`Zelda'][LINK:zelda] for ideas and support
 - [@`Zelda'][LINK:zelda] for ideas and support 🧧 
 - [`eightiesboi`][LINK:eightiesboi] for ideas, support and testing! 🧧
 
