@@ -115,7 +115,6 @@ A common part inventory mod for Kerbal Space Program
 - Use  
 [![CKAN][CKAN:img]][CKAN:url]
 
-
 ### Dependencies  
 
 - [x]  [Kerbal Space Program][KSP:url] [![][KSP:shld]][KSP:url] [^1]  
