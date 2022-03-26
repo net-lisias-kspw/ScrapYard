@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ScrapYard")]
-[assembly: AssemblyDescription("A common part inventory addon for Kerbal Space Program")]
+[assembly: AssemblyDescription("A common part inventory addin for Kerbal Space Program")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("KGEx")]
 [assembly: AssemblyProduct("ScrapYard")]
-[assembly: AssemblyCopyright("Copyright ©  2020, 2021")]
+[assembly: AssemblyCopyright("Copyright ©  2018, 2020, 2021 zer0Kerbal")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
