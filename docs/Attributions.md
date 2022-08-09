@@ -21,6 +21,8 @@ https://forum.kerbalspaceprogram.com/index.php?/profile/80345-severedsolo/
 https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/profile/photo-80345.png
 
 
+Special thanks to [@SiriusSam][siriussame] for the original idea of creating a separate part inventory way back in 2014 and for the name, and to [@enneract][enneract] for discussion and design help.
+
 <script src="https://kit.fontawesome.com/0ea5493613.js" crossorigin="anonymous"></script>
 <i class="fa fa-gear fa-spin fa-3x" style="color: firebrick"></i>
 
