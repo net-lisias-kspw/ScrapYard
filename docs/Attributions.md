@@ -68,7 +68,7 @@ updated: 03 Jun 2022
 </ul>
 
 <!-- links -->
-[DML]: https://forum.kerbalspaceprogram.com/index.php?/topic/208107-*/ "DaMichel Ltd Forum Thread"
+[SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192456-* "ScrapYard (SYD)"
 
 [damichel]: https://forum.kerbalspaceprogram.com/index.php?/profile/93697-*/ "damichel"
 [bezzier]: https://forum.kerbalspaceprogram.com/index.php?/profile/81209-*/ "Bezzier"
