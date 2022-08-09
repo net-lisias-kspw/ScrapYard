@@ -64,14 +64,12 @@ To install, place the `GameData` folder inside your Kerbal Space Program folder:
         ...
       + [Localization]
         ...
-      + [Parts]
-        ...
       + [Plugins]
         ...
       * #.#.#.#.htm
       * Attributions.htm
       * changelog.md
-      * License.txt
+      * GPL-2.0.txt
         ManualInstallation.htm
       * readme.htm
       * ScrapYard.version
@@ -84,11 +82,10 @@ To install, place the `GameData` folder inside your Kerbal Space Program folder:
 
 ### Dependencies
 
-* [SimpleConstruction! (SCON!)][SCON]
 * *either*
   * [Module Manager][mm]
   * [Module Manager /L][mml]
 
-[SCON]: https://forum.kerbalspaceprogram.com/index.php?/topic/191424-* "SimpleConstruction! (SCON!)"
+[SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192456-* "ScrapYard (SYD)"
 [mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
 [mml]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
