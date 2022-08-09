@@ -102,10 +102,10 @@ or [![CKAN][CKAN:img]][CKAN:url]
 ### Supports
 
 * [KRASH][krash]
-* [TweakScale][tws]
-* [RemoteTech][rt]
+* [TweakScale (TWK)][twk]
+* [RemoteTech (RT)][rt]
 * [FAR][far]
-* [ContractConfigurator][cc]
+* [Contract Configurator][cc]
 * [On Demand Fuel Cells (ODFC)][ODFC]
 * [GPO (Goo Pumps & Oils') Speed Pump (GPO)][GPO]
 
