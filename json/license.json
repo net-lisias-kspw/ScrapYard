@@ -2,9 +2,9 @@
  "schemaVersion": 1,
  "label": "License",
  "labelColor": "white",
- "message": "Expat/MIT",
+ "message": "GPLv2",
  "color": "A42E2B",
- "namedLogo": "gnu",
  "logoColor": "A42E2B",
+ "namedLogo": "gnu",
  "style": "plastic"
 }
