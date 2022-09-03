@@ -1,18 +1,22 @@
 ---
 permalink: /ManualInstallation.html
-title: ManualInstallation
+title: Manual Installation
+description: the flat-pack Kiea instructions, written in Kerbalese, unusally present
+tags: installation,directions,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
-<!-- ManualInstallation.md v1.1.0.0
-Not So SimpleConstruction! (NSSC)
+<!-- ManualInstallation.md v1.1.8.1
+ScrapYard (SYD)
 created: 01 Oct 2019
-updated: 02 Mar 2022 -->
+updated: 29 Jul 2022 -->
 
 <!-- based upon work by Lisias -->
 
-# Not So SimpleConstruction! (NSSC)
+# ScrapYard (SYD)
 
-Adds Mallet, Survey Stake, Recycler, Disposable Pad, Orbital Dock and Control Reference; and turns Cupola module to Survey Station. Requires SimpleConstruction! for Kerbal Space Program.
+[Home](./index.md)
+
+A common part inventory addon for Kerbal Space Program.
 
 ## Installation Instructions
 
@@ -22,83 +26,66 @@ You should be all good! (check for latest version on CurseForge)
 
 ### If Downloaded from CurseForge/OverWolf manual download
 
-To install, place the GameData folder inside your Kerbal Space Program folder:
+To install, place the `ScrapYard` folder inside your Kerbal Space Program's GameData folder:
 
-* **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**, including any other fork:
-  * Delete `<KSP_ROOT>/GameData/NotSoSimpleConstruction`
-* Extract the package's `NotSoSimpleConstruction/` folder into your KSP's as follows:
-  * `<PACKAGE>/SimpleConstruction` --> `<KSP_ROOT>/GameData/NotSoSimpleConstruction`
-    * Overwrite any preexisting file.
+* **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**
+  * Delete `<KSP_ROOT>/GameData/ScrapYard`
+* Extract the package's `ScrapYard/` folder into your KSP's GameData folder as follows:
+  * `<PACKAGE>/ScrapYard` --> `<KSP_ROOT>/GameData`
+    * Overwrite any preexisting folder/file(s).
+  * you should end up with `<KSP_ROOT>/GameData/ScrapYard`
 
 ### If Downloaded from SpaceDock / GitHub / other
 
-To install, place the GameData folder inside your Kerbal Space Program folder:
+To install, place the `GameData` folder inside your Kerbal Space Program folder:
 
-* **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**, including any other fork:
-  * Delete `<KSP_ROOT>/GameData/NotSoSimpleConstruction`
-* Extract the package's `GameData/NotSoSimpleConstruction` folder into your KSP's as follows:
-  * `<PACKAGE>/GameData/NotSoSimpleConstruction` --> `<KSP_ROOT>/GameData`
+* **REMOVE ANY OLD VERSIONS OF THE PRODUCT BEFORE INSTALLING**
+  * Delete `<KSP_ROOT>/GameData/ScrapYard`
+* Extract the package's `GameData` folder into your KSP's root folder as follows:
+  * `<PACKAGE>/GameData` --> `<KSP_ROOT>`
     * Overwrite any preexisting file.
+  * you should end up with `<KSP_ROOT>/GameData/ScrapYard`
 
 ## The following file layout must be present after installation
 
-```
+```markdown
 <KSP_ROOT>
-  [GameData]
-    [ExtraplanetaryLaunchpads]
-      [Localization]
+  + [GameData]
+    + [ScrapYard]
+      + [Agencies]
         ...
-      [Texture]
+      + [Compatibility]
         ...
-      [UI]
+      + [Config]
         ...
-      License.txt
-      License-KS.txt
-    [NotSoSimpleConstruction]
-      [Assets]
+      + [Contracts]
         ...
-      [Compatibility]
+      + [Flags]
         ...
-      [Configs]
+      + [Localization]
         ...
-      [Localization]
+      + [Plugins]
         ...
-      [Parts]
-        ...
-      #.#.#.#.htm
-      changelog.md
-      GPLv3.txt
-      readme.htm
-      NotSoSimpleConstruction.version
-    [SimpleConstruction]
-      [Agencies]
-        ...
-      [Compatibility]
-        ...
-      [Contracts]
-        ...
-      [Flags]
-        ...
-      [Localization]
-        ...
-      [Parts]
-        ...
-      [Plugins]
-        ...
-      #.#.#.#.htm
-      changelog.md
-      Expat-MIT.txt
-      readme.htm
-      SimpleConstruction.version
+      * #.#.#.#.htm
+      * Attributions.htm
+      * changelog.md
+      * GPL-2.0.txt
+        ManualInstallation.htm
+      * readme.htm
+      * ScrapYard.version
     ...
-  KSP.log
+    * [Module Manager][mm] or [Module Manager /L][mml]
+    * ModuleManager.ConfigCache
+  * KSP.log
   ...
 ```
 
 ### Dependencies
 
-* [Module Manager /L][mm]
-* [SimpleConstruction! (SCON!)][scon]
+* *either*
+  * [Module Manager][mm]
+  * [Module Manager /L][mml]
 
-[scon]: https://forum.kerbalspaceprogram.com/index.php?/topic/191424-* "SimpleConstruction! (SCON!)"
-[mm]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
+[SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192456-* "ScrapYard (SYD)"
+[mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
+[mml]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
