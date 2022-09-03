@@ -1,10 +1,10 @@
 ---
 permalink: /License.html
-title: License - GPLv2 (GPL-2.0)
+title: License - GPL-2.0 (GPL-2.0)
 ---
 
 <!--
-GPLv2.md v1.0.0.0
+GPL-2.0.md v1.0.0.0
 ScrapYard SYD
 created: 23 Mar 2022
 updated: 
@@ -14,7 +14,7 @@ updated:
 
 SPDX short identifier: GPL-2.0
 
-Further resources on **GPLv2**
+Further resources on **GPL-2.0**
 
  
 
