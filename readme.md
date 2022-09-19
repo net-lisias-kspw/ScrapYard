@@ -17,7 +17,7 @@ A common part inventory addon for Kerbal Space Program.
 
 
 
-## By [`zer0Kerbal`][zer0Kerbal], originally by [`magico13`][magico13], then by [`severedsolo`][severedsolo]
+## By [`Lisias'][lisias] and [`zer0Kerbal`][zer0Kerbal], originally by [`magico13`][magico13], then by [`severedsolo`][severedsolo]
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
@@ -107,7 +107,7 @@ or [![CKAN][CKAN:img]][CKAN:url]
 * [FAR][far]
 * [Contract Configurator][cc]
 * [On Demand Fuel Cells (ODFC)][ODFC]
-* [GPO (Goo Pumps & Oils') Speed Pump (GPO)][GPO]
+* [Goo Pumps & Oils' (GPO)) Speed Pump (GPOSP)][GPO]
 
 #### Mods using ScrapYard (SYD)
 
@@ -303,6 +303,8 @@ plugin,editor,flags,agency,sound,career
 [linuxgurugamer]: https://forum.kerbalspaceprogram.com/index.php?/profile/129964-*/ "linuxgurugamer"
 [siriussame]: https://forum.kerbalspaceprogram.com/index.php?/profile/116426-*/ "siriussam"
 [enneract]: https://forum.kerbalspaceprogram.com/index.php?/profile/56759-*/ "enneract"
+
+[lisias]: https://forum.kerbalspaceprogram.com/index.php?/profile/187168-*/ "Lisias"
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
 
 [IMG:hero:0]: https://i.imgur.com/DVDdgU1.png
