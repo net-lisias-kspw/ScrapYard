@@ -16,13 +16,14 @@ updated: 31 Jul 2022 -->
 A common part inventory addon for Kerbal Space Program.
 
 
-## By [`Lisias`][lisias] and [`zer0Kerbal`][zer0Kerbal], originally by [`magico13`][magico13], then by [`severedsolo`][severedsolo]
+## By [Lisias][lisias] and [zer0Kerbal][zer0Kerbal], originally by [magico13][magico13], then by [severedsolo][severedsolo]
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 <img src="https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/HeroLogo_1920x1920.png" alt="ScrapYard Hero" width="72%" height="72%">
 
-### Preamble by [severedsolo][severedsolo]:
+### Preamble by [severedsolo][severedsolo]
+>
 > So you may have heard that @magico13 is giving up modding KSP. I've got the honour of taking over support for ScrapYard, because it makes sense as I have my own mod that depends on it (Oh Scrap!). I want to take this opportunity to thank magico13 for all his hard work and contributions to the community over the years, as I know that my own KSP experience would be much poorer without his mods. Anyway, enough from me.
 
 ### The bit you are actually interested in
