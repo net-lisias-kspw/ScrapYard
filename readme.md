@@ -16,14 +16,14 @@ updated: 31 Jul 2022 -->
 A common part inventory addon for Kerbal Space Program.
 
 
-
-## By [`zer0Kerbal`][zer0Kerbal], originally by [`magico13`][magico13], then by [`severedsolo`][severedsolo]
+## By [Lisias][lisias] and [zer0Kerbal][zer0Kerbal], originally by [magico13][magico13], then by [severedsolo][severedsolo]
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
-<img src="https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/HeroLogo_1920x1920.png" alt="ScrapYard Hero" width="72%" height="72%">
+<img src="https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/HeroLogo_1920x1920.png" alt="ScrapYard Hero" width="50%" height="50%">
 
-### Preamble by [severedsolo][severedsolo]:
+### Preamble by [severedsolo][severedsolo]
+>
 > So you may have heard that @magico13 is giving up modding KSP. I've got the honour of taking over support for ScrapYard, because it makes sense as I have my own mod that depends on it (Oh Scrap!). I want to take this opportunity to thank magico13 for all his hard work and contributions to the community over the years, as I know that my own KSP experience would be much poorer without his mods. Anyway, enough from me.
 
 ### The bit you are actually interested in
@@ -107,7 +107,7 @@ or [![CKAN][CKAN:img]][CKAN:url]
 * [FAR][far]
 * [Contract Configurator][cc]
 * [On Demand Fuel Cells (ODFC)][ODFC]
-* [GPO (Goo Pumps & Oils') Speed Pump (GPO)][GPO]
+* [Goo Pumps & Oils' (GPO)) Speed Pump (GPOSP)][GPO]
 
 #### Mods using ScrapYard (SYD)
 
@@ -298,11 +298,13 @@ plugin,editor,flags,agency,sound,career
 [twitter]: https://twitter.com/zer0Kerbal
 [youtube]: https://www.youtube.com/channel/UCp9c8IaK4Gjgfj3O9QxrbDw
 
-[magico13]: https://forum.kerbalspaceprogram.com/index.php?/profile/73338*/ "magico13"
+[magico13]: https://forum.kerbalspaceprogram.com/index.php?/profile/73338-*/ "magico13"
 [severedsolo]: https://forum.kerbalspaceprogram.com/index.php?/profile/80345-*/ "severedsolo"
 [linuxgurugamer]: https://forum.kerbalspaceprogram.com/index.php?/profile/129964-*/ "linuxgurugamer"
 [siriussame]: https://forum.kerbalspaceprogram.com/index.php?/profile/116426-*/ "siriussam"
 [enneract]: https://forum.kerbalspaceprogram.com/index.php?/profile/56759-*/ "enneract"
+
+[lisias]: https://forum.kerbalspaceprogram.com/index.php?/profile/187168-*/ "Lisias"
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
 
 [IMG:hero:0]: https://i.imgur.com/DVDdgU1.png
