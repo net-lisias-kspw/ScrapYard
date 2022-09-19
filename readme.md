@@ -20,7 +20,7 @@ A common part inventory addon for Kerbal Space Program.
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
-<img src="https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/HeroLogo_1920x1920.png" alt="ScrapYard Hero" width="72%" height="72%">
+<img src="https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/img/HeroLogo_1920x1920.png" alt="ScrapYard Hero" width="50%" height="50%">
 
 ### Preamble by [severedsolo][severedsolo]
 >
