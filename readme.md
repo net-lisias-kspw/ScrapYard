@@ -15,6 +15,9 @@ updated: 31 Jul 2022 -->
 
 A common part inventory addon for Kerbal Space Program.
 
+
+## By [`zer0Kerbal`][zer0Kerbal],
+
 ## By [`Lisias'][lisias] and [`zer0Kerbal`][zer0Kerbal], originally by [`magico13`][magico13], then by [`severedsolo`][severedsolo]
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
