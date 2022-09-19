@@ -298,7 +298,7 @@ plugin,editor,flags,agency,sound,career
 [twitter]: https://twitter.com/zer0Kerbal
 [youtube]: https://www.youtube.com/channel/UCp9c8IaK4Gjgfj3O9QxrbDw
 
-[magico13]: https://forum.kerbalspaceprogram.com/index.php?/profile/73338*/ "magico13"
+[magico13]: https://forum.kerbalspaceprogram.com/index.php?/profile/73338-*/ "magico13"
 [severedsolo]: https://forum.kerbalspaceprogram.com/index.php?/profile/80345-*/ "severedsolo"
 [linuxgurugamer]: https://forum.kerbalspaceprogram.com/index.php?/profile/129964-*/ "linuxgurugamer"
 [siriussame]: https://forum.kerbalspaceprogram.com/index.php?/profile/116426-*/ "siriussam"
