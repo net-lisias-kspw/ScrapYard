@@ -10,5 +10,7 @@
 - [LegalMumboJumbo](LegalMumboJumbo.md)
 - [Localizations](Localizations.md)
 - [ManualInstallation](ManualInstallation.md)
+- [Marketing](Marketing.md)
 - [Notices](Notices.md)
+- [Why](Why.md)
 - [changelog](changelog.md)
