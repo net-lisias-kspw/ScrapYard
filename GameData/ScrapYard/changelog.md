@@ -10,7 +10,7 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                |
 | ckan       | ScrapYard                                                        |
 
-## Version 2.2.2.0-release - `<Maintenance>`
+## Version 2.2.2.0-release - `<Maintenance>` edition
 
 * 18 Sep 2022
 * Released for 1.12.3
