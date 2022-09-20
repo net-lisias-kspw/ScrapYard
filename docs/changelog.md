@@ -31,8 +31,8 @@ CC BY-ND 4.0 by zer0Kerbal
 ### Summary 2.2.2.0
 
 * Maintenance release
-* Compatibile version bump to 1.12.3
-* Contract Configurator hard dependancy KSP 1.8.1+
+* Compatible version bump to 1.12.3
+* Contract Configurator hard dependency KSP 1.8.1+
 * Version .dll's
   * <ScrapYard.dll> v2.2.1.23
   * <ScrapYard_ContractConfigurator.dll> v2.2.1.6
@@ -40,7 +40,7 @@ CC BY-ND 4.0 by zer0Kerbal
 
 ### Changes
 
-* Contract Configurator hard dependancy KSP 1.8.1+
+* Contract Configurator hard dependency KSP 1.8.1+
   * this is because KSP changed how it handles loading .dll's
   * updates #25 - [BUG 🐞] ScrapYard is borking KSP when Contract Configurator is not installed
 * Update License
