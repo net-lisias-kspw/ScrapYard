@@ -10,13 +10,55 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                |
 | ckan       | ScrapYard                                                        |
 
-## Version 2.2.1.0 - `*t-minus...the final countdown*`
+## Version 2.2.2.0-release - `<Maintenence>`
+
+* 18 Sep 2022
+* Released for 1.12.3
+
+### Summary 2.2.2.0
+
+* Maintenance release
+* Compatibile version bump to 1.12.3
+* Contract Configurator hard dependancy KSP 1.8.1+
+* Version .dll's
+  * <ScrapYard.dll> v2.2.1.23
+  * <ScrapYard_ContractConfigurator.dll> v2.2.1.6
+  * not recompiled for this release
+
+### Changes
+
+* Contract Configurator hard dependancy KSP 1.8.1+
+  * this is because KSP changed how it handles loading .dll's
+  * updates #25 - [BUG 🐞] ScrapYard is borking KSP when Contract Configurator is not installed
+* Update License
+  * Updated License: GPL-2.0
+  * was: Expat-MIT
+* closes #54 - Updated  License
+
+### Localization 2.2.2.0
+
+* Initial code localization
+  * closes #29 - American English <us-en.cfg>
+  * updates #28 - Localization - Master
+  * updates #46 - Code Localization
+
+### Status 2.2.2.0
+
+* Issues
+  * closes #47 - ScrapYard 2.2.2.0-prerelease `<Maintenance>`
+  * closes #48 - 2.2.2.0 Verify Legal Mumbo Jumbo
+  * closes #49 - 2.2.2.0 Update Documentation
+  * closes #50 - 2.2.2.0 Social Media
+
+---
+
+## Version 2.2.1.0-prerelease - `*t-minus...the final countdown*`
 
 * 2021-09-23
 * Released for 1.12.2
 * recompile for KSP 1.12.2 using KSP 1.12.2 assemblies (instead of 1.12.0)
 
-### Finally proper credit given to 
+### Finally proper credit given to
 
 * original Author [@`Magico13'] - thank you for this wonderful mod!  
 * [@`Zelda'] for ideas and support. The legend is real! 🧧
