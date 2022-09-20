@@ -218,8 +218,8 @@ plugin,editor,flags,agency,sound,career
 [LIC:0:log]: https://i.postimg.cc/bvjfsMP5/MIT-17x17.png "Expat-MIT"
 [LIC:0:shd]: https://img.shields.io/badge/License-Expat/MIT-3DA639?labelColor=black&logoColor=3DA639&logo=OpenSourceInitiative&style=plastic "Expat-MIT"
 
-[LIC:url]: https://www.gnu.org/licenses/gpl-2.0-standalone.html "GPLv2"
-[LIC:log]: https://i.postimg.cc/9FrwMgK6/GPL-17x17.png "GPLv2"
+[LIC:url]: https://www.gnu.org/licenses/gpl-2.0-standalone.html "GPL-2.0"
+[LIC:log]: https://i.postimg.cc/9FrwMgK6/GPL-17x17.png "GPL-2.0"
 [LIC:shd]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/license.json
 
 <!--- AVC -->
