@@ -45,7 +45,7 @@
 ### Status 2.2.2.0
 
 * Issues
-  * closes #47 - ScrapYard 2.2.2.0-prerelease `<Maintenance>`
+  * closes #47 - ScrapYard 2.2.2.0-release `<Maintenance>`
   * closes #48 - 2.2.2.0 Verify Legal Mumbo Jumbo
   * closes #49 - 2.2.2.0 Update Documentation
   * closes #50 - 2.2.2.0 Social Media
