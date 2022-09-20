@@ -85,9 +85,10 @@ or [![CKAN][CKAN:img]][CKAN:url]
 ### Dependencies
 
 * [Kerbal Space Program][KSP:url] [![Kerbal Space Program][KSP:shd]][KSP:url] [^2]
+* [Contract Configurator][cc] (only on KSP 1.8.1+)
 * Either [^3]
-  * [Module Manager][mm]
   * [Module Manager /L][mml]
+  * [Module Manager][mm]
 
 ### Recommends
 
@@ -101,13 +102,12 @@ or [![CKAN][CKAN:img]][CKAN:url]
 
 ### Supports
 
+* [Goo Pumps & Oils' (GPO)) Speed Pump (GPOSP)][GPO]
+* [On Demand Fuel Cells (ODFC)][ODFC]
 * [KRASH][krash]
 * [TweakScale (TWK)][twk]
 * [RemoteTech (RT)][rt]
 * [FAR][far]
-* [Contract Configurator][cc]
-* [On Demand Fuel Cells (ODFC)][ODFC]
-* [Goo Pumps & Oils' (GPO)) Speed Pump (GPOSP)][GPO]
 
 #### Mods using ScrapYard (SYD)
 
