@@ -31,7 +31,7 @@ CC BY-ND 4.0 by zer0Kerbal
 ### Summary 2.2.2.1
 
 * fixes index issue with localization string(s)
-* KSP-Recall is strongly recommended if any proceedural parts are installed
+* KSP-Recall is strongly recommended if any procedural parts are installed
 * Contract Configurator hard dependency KSP 1.8.1+
 * Version .dll's
   * <ScrapYard.dll> v2.2.1.23
