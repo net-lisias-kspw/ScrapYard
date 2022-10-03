@@ -1,14 +1,63 @@
 # Changelog  
   
-| modName    | ScrapYard (SYD)                                                  |
-| ---------- | ---------------------------------------------------------------- |
-| license    | Expat/MIT                                                        |
-| author     | magico13, severedsolo and zer0Kerbal                             |
-| forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/192456-*) |
-| github     | (https://github.com/zer0Kerbal/zer0Kerbal/ScrapYard)             |
-| curseforge | (https://www.curseforge.com/kerbal/ksp-mods/ScrapYard)           |
-| spacedock  | (https://spacedock.info/mod/1746)                                |
-| ckan       | ScrapYard                                                        |
+| modName    | ScrapYard (SYD)                                                   |
+| ---------- | ----------------------------------------------------------------- |
+| license    | Expat/MIT                                                         |
+| author     | magico13, severedsolo, lisias and zer0Kerbal                      |
+| forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/192456-*/) |
+| github     | (https://github.com/zer0Kerbal/zer0Kerbal/ScrapYard)              |
+| curseforge | (https://www.curseforge.com/kerbal/ksp-mods/ScrapYard)            |
+| spacedock  | (https://spacedock.info/mod/1746)                                 |
+| ckan       | ScrapYard                                                         |
+
+## Version 2.2.2.1-release - `<johnnycocas and Beetlecat to the rescue>` edition
+
+* 18 Sep 2022
+* Released for 1.12.3
+
+### Summary 2.2.2.1
+
+* fixes index issue with localization string(s)
+* KSP-Recall is strongly recommended if any procedural parts are installed
+* Contract Configurator hard dependency KSP 1.8.1+
+* Version .dll's
+  * <ScrapYard.dll> v2.2.1.23
+  * <ScrapYard_ContractConfigurator.dll> v2.2.1.6
+  * not recompiled for this release
+
+### Localization 2.2.2.1
+
+* Correct <en-us.cfg> v1.0.1.0
+  * thank you to
+    * @johnnycocas
+    * @Beetlecat
+  * change from <<0>> to <<1>> (et al)
+  * lines
+    * 36,40,59
+* Update
+  * prep for project Watson (linting and formatting)
+  * <readme.md> v2.1.2.0
+  * <quickstart.md> v1.0.1.1
+* closes #64 - Weird part list # of uses label, bug or some other issue?
+* updates #20 - [BUG] Editor Inventory Gui Glitch
+* updates #28 - Localization - Master
+* updates #46 - Code Localization
+
+### Updates
+
+* <PartBlacklist.cfg> v1.1.0.0
+  * add all Serenity deployed science parts
+  * updates #27 - [BUG] ScrapYard and Deployed Science
+
+### Status 2.2.2.1
+
+* Issues
+  * closes #65 - ScrapYard (SYD) 2.2.2.1-release `<johnnycocas and Beetlecat to the rescue>`
+  * closes #66 - 2.2.2.1 Update Documentation
+  * closes #67 - 2.2.2.1 Update Social Media
+  * closes #68 - 2.2.2.1 Verify Legal Mumbo Jumbo
+
+---
 
 ## Version 2.2.2.0-release - `<Maintenance>` edition
 
