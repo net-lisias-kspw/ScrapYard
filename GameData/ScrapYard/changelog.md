@@ -10,7 +10,7 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                 |
 | ckan       | ScrapYard                                                         |
 
-## Version 2.2.2.1-release - `<johnnycocas and Beatlecat to the rescue>` edition
+## Version 2.2.2.1-release - `<johnnycocas and Beetlecat to the rescue>` edition
 
 * 18 Sep 2022
 * Released for 1.12.3
@@ -28,7 +28,10 @@
 ### Localization 2.2.2.1
 
 * Correct <en-us.cfg> v1.0.1.0
-  * change fro <<0>> to <<1>> (et al)
+  * thank you to
+    * @johnnycocas
+    * @Beetlecat
+  * change from <<0>> to <<1>> (et al)
   * lines
     * 36,40,59
 * Update
@@ -49,7 +52,7 @@
 ### Status 2.2.2.1
 
 * Issues
-  * closes #65 - ScrapYard (SYD) 2.2.2.1-release `<johnnycocas and Beatlecat to the rescue>`
+  * closes #65 - ScrapYard (SYD) 2.2.2.1-release `<johnnycocas and Beetlecat to the rescue>`
   * closes #66 - 2.2.2.1 Update Documentation
   * closes #67 - 2.2.2.1 Update Social Media
   * closes #68 - 2.2.2.1 Verify Legal Mumbo Jumbo
