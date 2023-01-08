@@ -11,6 +11,7 @@ updated: 01 Jan 2023 -->
 
 ![Code][CODE:shd]
 
+![ScrapYard CC][MOD:CC:shd:latest]
 
 # ScrapYard (SYD)
 
@@ -182,6 +183,8 @@ plugin,editor,flags,agency,sound,career
 
 <!--- mod -->
 [MOD:shd:latest]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/mod.json
+
+[MOD:CC:shd:latest]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/sycc.json
 
 [CODE:shd]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/code.json
 
