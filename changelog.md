@@ -10,6 +10,11 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                 |
 | ckan       | ScrapYard                                                         |
 
+
+* Recompile for
+  * KSP 1.12.2
+    * .Net 4.7.2
+    * C# 7.0
 ## Version 2.2.2.1-release - `<johnnycocas and Beetlecat to the rescue>` edition
 
 * 18 Sep 2022
