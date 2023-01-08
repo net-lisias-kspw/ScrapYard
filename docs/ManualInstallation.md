@@ -12,7 +12,7 @@ updated: 29 Jul 2022 -->
 
 <!-- based upon work by Lisias -->
 
-# ScrapYard (SYD)
+# [ScrapYard (SYD)][SYD]
 
 [Home](./index.md)
 
@@ -58,23 +58,21 @@ To install, place the `GameData` folder inside your Kerbal Space Program folder:
         ...
       + [Config]
         ...
-      + [Contracts]
-        ...
       + [Flags]
         ...
       + [Localization]
         ...
       + [Plugins]
         ...
+        ManualInstallation.htm
       * #.#.#.#.htm
       * Attributions.htm
       * changelog.md
       * GPL-2.0.txt
-        ManualInstallation.htm
       * readme.htm
       * ScrapYard.version
     ...
-    * [Module Manager][mm] or [Module Manager /L][mml]
+    * [Module Manager /L][mml] or [Module Manager][mm]
     * ModuleManager.ConfigCache
   * KSP.log
   ...
@@ -83,8 +81,8 @@ To install, place the `GameData` folder inside your Kerbal Space Program folder:
 ### Dependencies
 
 * *either*
-  * [Module Manager][mm]
   * [Module Manager /L][mml]
+  * [Module Manager][mm]
 
 [SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192456-* "ScrapYard (SYD)"
 [mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "label": "ScrapYard_ContractConfigurator",
+  "label": "ScrapYard Contract Configurator",
   "labelColor": "darkgreen",
-  "message": "2.2.1.0",
+  "message": "2.2.99.0",
   "color": "orange",
   "style": "plastic"
 }
