@@ -3,13 +3,18 @@
 | modName    | ScrapYard (SYD)                                                   |
 | ---------- | ----------------------------------------------------------------- |
 | license    | Expat/MIT                                                         |
-| author     | magico13, severedsolo, lisias and zer0Kerbal                      |
+| author     | magico13, severedsolo, Lisias and zer0Kerbal                      |
 | forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/192456-*/) |
 | github     | (https://github.com/zer0Kerbal/zer0Kerbal/ScrapYard)              |
 | curseforge | (https://www.curseforge.com/kerbal/ksp-mods/ScrapYard)            |
 | spacedock  | (https://spacedock.info/mod/1746)                                 |
 | ckan       | ScrapYard                                                         |
 
+
+* Recompile for
+  * KSP 1.12.2
+    * .Net 4.7.2
+    * C# 7.0
 ## Version 2.2.2.1-release - `<johnnycocas and Beetlecat to the rescue>` edition
 
 * 18 Sep 2022
@@ -141,7 +146,7 @@
 * Recompile for
   * KSP 1.12.2
     * .Net 4.7.2
-    * C# 9.0
+    * C# 7.0
 * Update
   * update to ToolsVersion 16
   * lint .csproj's; remove comments
