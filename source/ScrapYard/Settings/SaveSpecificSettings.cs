@@ -37,7 +37,7 @@ namespace ScrapYard
         public bool ModEnabled = true;
 
         /// <summary>Use the Inventory feature?</summary>
-        [GameParameters.CustomParameterUI("#SYD-settings-UseInventory", toolTip = "#SYD-settings-UseInventory#SYD-settings-UseInventory-Tip")]
+        [GameParameters.CustomParameterUI("#SYD-settings-UseInventory", toolTip = "#SYD-settings-UseInventory-Tip")]
         public bool UseInventory = true;
 
         /// <summary>Use the tracking feature?</summary>
