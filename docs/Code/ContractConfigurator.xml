@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScrapYard_ContractConfigurator</name>
+    </assembly>
+    <members>
+        <member name="M:ScrapYard_ContractConfigurator.IntermediateInventoryPart.ToInventoryParts">
+            <summary>
+            Converts the IntermediateInventoryPart into a list of InventoryParts
+            </summary>
+            <returns>A List of InventoryParts</returns>
+        </member>
+        <member name="T:ScrapYard_ContractConfigurator.Version">
+            <summary>Version - retrieved at compile from ScrapYard.version</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.major">
+            <summary>Major revision</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.minor">
+            <summary>Minor revision</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.patch">
+            <summary>Patch revision</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.build">
+            <summary>Build revision</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.Number">
+            <summary>Version String const</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.Text">
+            <summary>Text Version String const</summary>
+        </member>
+        <member name="F:ScrapYard_ContractConfigurator.Version.SText">
+            <summary>Plain Text Version String const</summary>
+        </member>
+    </members>
+</doc>

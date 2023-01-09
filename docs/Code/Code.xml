@@ -994,6 +994,48 @@
             Returns whether ScrapYard is enabled for the save
             </summary>
         </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.GameMode">
+            <summary>Settings: Game Mode</summary>
+        </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.HasPresets">
+            <summary>Settings: Has Presets</summary>
+        </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.Section">
+            <summary>Section Heading</summary>
+        </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.SectionOrder">
+            <summary>Section Order</summary>
+        </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.Title">
+            <summary>Settings Title</summary>
+        </member>
+        <member name="P:ScrapYard.SaveSpecificSettings.DisplaySection">
+            <summary>Display Section Title</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.ModEnabled">
+            <summary>Is this enabled (globally)?</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.UseInventory">
+            <summary>Use the Inventory feature?</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.UseTracker">
+            <summary>Use the tracking feature?</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.OverrideFunds">
+            <summary>Override funds?</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.FundsSalePercent">
+            <summary>Fuds sale as a percentage</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.DebugLogging">
+            <summary>Additional debug logging</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.RefreshTime">
+            <summary>RefreshTime</summary>
+        </member>
+        <member name="F:ScrapYard.SaveSpecificSettings.coloredPAW">
+            <summary>Enable colors in the PAW?</summary>
+        </member>
         <member name="M:ScrapYard.UI.InstanceModulesVM.GetModules">
             <summary>
             Gets the list of all saved modules on the backing part
@@ -1117,48 +1159,6 @@
             </summary>
             <returns>True if over the window, false otherwise.</returns>
         </member>
-        <member name="M:ScrapYard.Utilities.MathParsing.ReplaceMathVariables(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            Replace all instances of variables with their provided values
-            </summary>
-            <param name="identifier">An identifier for the string</param>
-            <param name="input">The string to replace variables on</param>
-            <param name="variables">The Dictionary containing the variables and their values</param>
-            <returns>A string with the variables replaced</returns>
-        </member>
-        <member name="M:ScrapYard.Utilities.MathParsing.ParseMath(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            Takes a string and evaluates it as a mathematical expression, replacing any variables "ie, [X]" with the provided values
-            </summary>
-            <param name="identifier">An identifier for the string</param>
-            <param name="input">The string to evaluate</param>
-            <param name="variables">The Dictionary containing the variables and their values</param>
-            <returns>The result of the evaluation</returns>
-        </member>
-        <member name="M:ScrapYard.Utilities.MathParsing.FindEndParenthesis(System.String,System.Int32)">
-            <summary>
-            Locates the terminating paranthesis for the given position. Also finds the location of any commas (for max, min, etc)
-            </summary>
-            <param name="str">The string to search</param>
-            <param name="curPos">The current position in the string</param>
-            <returns>An int[2] of the end position and the location of any appropriate comma.</returns>
-        </member>
-        <member name="M:ScrapYard.Utilities.MathParsing.DoMath(System.Double,System.String,System.String)">
-            <summary>
-            Takes the current value and performs the requested operation on it
-            </summary>
-            <param name="currentVal">The current value</param>
-            <param name="operation">The operation to perform</param>
-            <param name="newVal">The new value string to "add" to the current value</param>
-            <returns>The new value after the operation</returns>
-        </member>
-        <member name="M:ScrapYard.Utilities.MathParsing.DoIfStatement(System.String)">
-            <summary>
-            Performs parsing of inline if statements
-            </summary>
-            <param name="statement">The statement string to act on</param>
-            <returns>The result of the if statement</returns>
-        </member>
         <member name="M:ScrapYard.Utilities.ConfigNodeUtils.PartNameFromNode(ConfigNode)">
             <summary>
             Returns the internal name of a part given a valid ConfigNode of the part. Parts saved to a craft file are saved as "part = $partname_$idNumber", 
@@ -1266,6 +1266,48 @@
             </summary>
             <param name="input">The vessel as a list of part ConfigNodes.</param>
         </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.ReplaceMathVariables(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Replace all instances of variables with their provided values
+            </summary>
+            <param name="identifier">An identifier for the string</param>
+            <param name="input">The string to replace variables on</param>
+            <param name="variables">The Dictionary containing the variables and their values</param>
+            <returns>A string with the variables replaced</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.ParseMath(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Takes a string and evaluates it as a mathematical expression, replacing any variables "ie, [X]" with the provided values
+            </summary>
+            <param name="identifier">An identifier for the string</param>
+            <param name="input">The string to evaluate</param>
+            <param name="variables">The Dictionary containing the variables and their values</param>
+            <returns>The result of the evaluation</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.FindEndParenthesis(System.String,System.Int32)">
+            <summary>
+            Locates the terminating paranthesis for the given position. Also finds the location of any commas (for max, min, etc)
+            </summary>
+            <param name="str">The string to search</param>
+            <param name="curPos">The current position in the string</param>
+            <returns>An int[2] of the end position and the location of any appropriate comma.</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.DoMath(System.Double,System.String,System.String)">
+            <summary>
+            Takes the current value and performs the requested operation on it
+            </summary>
+            <param name="currentVal">The current value</param>
+            <param name="operation">The operation to perform</param>
+            <param name="newVal">The new value string to "add" to the current value</param>
+            <returns>The new value after the operation</returns>
+        </member>
+        <member name="M:ScrapYard.Utilities.MathParsing.DoIfStatement(System.String)">
+            <summary>
+            Performs parsing of inline if statements
+            </summary>
+            <param name="statement">The statement string to act on</param>
+            <returns>The result of the if statement</returns>
+        </member>
         <member name="M:ScrapYard.Utilities.Utils.AvailablePartFromName(System.String)">
             <summary>
             Finds an AvailablePart from the LoadedPartsList based on the provided part name
@@ -1339,6 +1381,30 @@
             <summary>
             Returns a ConfigNode representing the current state, or sets the state from a ConfigNode
             </summary>
+        </member>
+        <member name="T:ScrapYard.Version">
+            <summary>Version - retrieved at compile from ScrapYard.version</summary>
+        </member>
+        <member name="F:ScrapYard.Version.major">
+            <summary>Major revision</summary>
+        </member>
+        <member name="F:ScrapYard.Version.minor">
+            <summary>Minor revision</summary>
+        </member>
+        <member name="F:ScrapYard.Version.patch">
+            <summary>Patch revision</summary>
+        </member>
+        <member name="F:ScrapYard.Version.build">
+            <summary>Build revision</summary>
+        </member>
+        <member name="F:ScrapYard.Version.Number">
+            <summary>Version String const</summary>
+        </member>
+        <member name="F:ScrapYard.Version.Text">
+            <summary>Text Version String const</summary>
+        </member>
+        <member name="F:ScrapYard.Version.SText">
+            <summary>Plain Text Version String const</summary>
         </member>
     </members>
 </doc>
