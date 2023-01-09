@@ -19,13 +19,22 @@
   * for Kerbal Space Program 1.12.4
   * by [zer0Kerbal](https://github.com/zer0Kerbal)
 
+### Summary 2.2.99.0
+
+* Recompiled for 1.12.4 with .NET 4.7.2 using C# 7.0
+* Added Agency and Flags
+* Split configs between Compatibility and Config
+* Deployed science parts now blacklisted, without a cool hat
+* two releases: one with and one without Contract Configurator (best solution right now)
+
+### Code 2.2.99.0
 
 * Recompile for
   * KSP 1.12.2
     * .Net 4.7.2
     * C# 7.0
-* added deployed science parts to blacklist
-* two releases: one with and one without Contract Configurator (best solution right now)
+  * <ScrapYard.dll> v2.2.1.23 --> 2.2.99.87
+  * <ScrapYard_ContractConfigurator.dll> v2.2.1.6 --> 2.2.99.58
 * closes #27 - [BUG 🐞] ScrapYard and Deployed Science
 * closes #25 - [BUG 🐞] ScrapYard is borking KSP when Contract Configurator is not installed
 
@@ -34,9 +43,9 @@
 * Code is localized.
   * <en-us.cfg> 1.1.0.0
   * add agent specific strings
-* closes #46 - Code Localization
-* updates #28 - Localization - Master
 * closes #20 - [BUG 🐞] Editor Inventory Gui Glitch
+* updates #28 - Localization - Master
+* closes #46 - Code Localization
 
 ### Status 2.2.99.0
 
@@ -45,11 +54,10 @@
   * closes #59 - 2.2.99.0 Verify Legal Mumbo Jumbo
   * closes #60 - 2.2.99.0 Update Documentation
   * closes #61 - 2.2.99.0 Update Social Media
-
-  * closes #71 - [Bug 🐞]: Old known issue with BuoyancyControl
-  * closes #62 - [Bug 🐞]: Fail to re-use command pods
-  * closes #52 - [Bug 🐞]: Flowgraph spam in console lags the game incredible during construction
-  * closes #51 - [Bug 🐞]: Saves take a long time to process
+  * updates #71 - [Bug 🐞]: Old known issue with BuoyancyControl
+  * updates #62 - [Bug 🐞]: Fail to re-use command pods
+  * updates #52 - [Bug 🐞]: Flowgraph spam in console lags the game incredible during construction
+  * updates #51 - [Bug 🐞]: Saves take a long time to process
 
 ---
 
