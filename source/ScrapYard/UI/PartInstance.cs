@@ -82,7 +82,7 @@ namespace ScrapYard.UI
             MultiOptionDialog diag = new MultiOptionDialog(Localizer.Format("confirmDiscard"),
                 msg,
                 //_sellOrDiscard + " Part",
-                _sellOrDiscard + Localizer.Format(" #SYD-GUI-18"),
+                _sellOrDiscard + Localizer.Format("#SYD-GUI-18"),
                 HighLogic.UISkin,
                 new DialogGUIButton(_sellOrDiscard, () =>
                 {
