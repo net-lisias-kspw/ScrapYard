@@ -3,7 +3,7 @@
 | modName    | ScrapYard (SYD)                                                   |
 | ---------- | ----------------------------------------------------------------- |
 | license    | Expat/MIT                                                         |
-| author     | magico13, severedsolo, Lisias and zer0Kerbal                      |
+| author     | magico13, severedsolo, and zer0Kerbal                             |
 | forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/192456-*/) |
 | github     | (https://github.com/zer0Kerbal/zer0Kerbal/ScrapYard)              |
 | curseforge | (https://www.curseforge.com/kerbal/ksp-mods/ScrapYard)            |
