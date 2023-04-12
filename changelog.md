@@ -10,6 +10,32 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                 |
 | ckan       | ScrapYard                                                         |
 
+## Version 2.2.99.1-prerelease - `<Kanford and Sons: tinygrox>` edition
+
+* Released
+  * 11 Apr 2023
+  * for Kerbal Space Program 1.12.5
+  * by [zer0Kerbal](https://github.com/zer0Kerbal)
+
+* Add
+  * Brazilian Portuguese (Português Brasil)
+    * [pt-br.cfg] v1.0.0.0
+    * translation courtesy of [Lisias](https://github.com/Lisias)
+  * Simplified Chinese (简体中文)
+    * [zh-cn.cfg] v1.0.0.0
+    * translation courtesy of [tinygrox](https://github.com/tinygrox)
+* Update
+  * Agency and textures
+  * [en-us.cfg] v1.1.1.0
+  * [pt-br.cfg] v1.1.1.0
+  * [zh-cn.cfg] v1.0.1.0
+  * [ModuleSYPartTracker.cfg] v1.0.1.0
+  * [PartBlacklist.cfg] v1.1.1.0
+
+Documentation
+
+---
+
 ## Version 2.2.99.0-prerelease - `<Project Zelda II>` edition
 
 ### Release Notes
