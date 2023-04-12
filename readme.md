@@ -66,6 +66,7 @@ ScrapYard is a mod that provides a part inventory that can be shared between mul
 ### Localization
 
 >* ![English][EN] English
+>* ![Português Brasil][BR] Brazilian Portuguese (Português Brasil) - courtesty of [Lisias](https://github.com/Lisias)
 >* ![中文][CN] Simplified Chinese (中文) - courtesty of [tinygrox](https://github.com/tinygrox)
 >* ***your translation here***
 
@@ -268,8 +269,9 @@ Comment, click, like, share, up-vote, subscribe
 <!-- Localization -->
 [lreadme]: https://github.com/zer0Kerbal/zer0Kerbal/blob/master/Localization/readme.md "Localization Readme"
 [qstart]: https://github.com/zer0Kerbal/zer0Kerbal/blob/master/Localization/quickstart.md "Quickstart"
-[EN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/master/img/EN.png "English"  
-[CN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/master/img/CH.png "中文"  
+[EN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/master/img/EN.png "English"
+[BR]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/BR.png "Português Brasil"
+[CN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/master/img/CH.png "中文"
 
 [curseforge]: https://www.curseforge.com/members/zer0kerbal/projects
 [reddit]: https://www.reddit.com/user/zer0Kerbal
