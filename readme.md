@@ -86,7 +86,7 @@ Most recent releases only available via CurseForge/OverWolf Website/App
 
 ### Recommends
 
-* [KSP Recall (REC)][rec] *handles issues with Procedural Parts/Fairings/Etc* caused by PP
+* [KSP Recall (REC)][rec] *handles issues with Procedural Parts/Fairings/Etc* caused by [Procedural Parts (pp)][pp]
 * [OhScrap! (OHS)][OHS]
 
 ### Suggests
@@ -255,7 +255,8 @@ Comment, click, like, share, up-vote, subscribe
 [krash]: http://forum.kerbalspaceprogram.com/index.php?/topic/133082-*/ "KRASH"
 [MM]: https://github.com/net-lisias-ksp/ModularManagement "ModularManagement (MM)"
 [m-m]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
-[rec]: https://forum.kerbalspaceprogram.com/index.php?/topic/192048-*/ "KSP Recall (REC)"
+[pp]: https://forum.kerbalspaceprogram.com/index.php?/topic/204080-*/ "Procedural Parts (pp)"
+[rec]: https://www.curseforge.com/kerbal/ksp-mods/ksp-recall "KSP Recall"
 [rt]:  http://remotetechnologiesgroup.github.io/RemoteTech/ "RemoteTech"
 [sr]: https://forum.kerbalspaceprogram.com/index.php?/topic/179306-*/ "Stage Recovery"
 [twk]: https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*/ "TweakScale"
