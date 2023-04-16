@@ -11,9 +11,7 @@ this file: CC BY-ND 4.0 by zer0Kerbal -->
 [![ScrapYard][SHD:mod]][CURSFG:url] [![KSP version][KSP:shd]][KSP:url]  [![License][LIC:shd]][LIC:url]  
 [![Curseforge][CURSFG:shd]][CURSFG:url] [![GitHub][GITHUB:shd]][GITHUB:url] [![Pages][SHD:pgs]][pages]
 
-![Code][SHD:cde]
-
-![ScrapYard CC][SHD:cc]
+![Code][SHD:cde] ![ScrapYard][SHD:dll] ![ScrapYard_CC][SHD:cc]
 
 # ScrapYard (SYD)
 
@@ -194,6 +192,7 @@ Comment, click, like, share, up-vote, subscribe
 [SHD:mod]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/mod.json
 [SHD:pgs]: https://img.shields.io/badge/GitHub-Pages-white?style=plastic&labelColor=9cf&logoColor=181717&logo=github "GitHub IO"
 
+[SHD:dll]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/dll.json
 [SHD:cc]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/ScrapYard/master/json/sycc.json
 
 <!--- mod provenance -->
