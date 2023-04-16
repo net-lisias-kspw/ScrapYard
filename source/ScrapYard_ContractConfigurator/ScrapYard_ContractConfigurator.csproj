@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScrapYard_ContractConfigurator</RootNamespace>
     <AssemblyName>ScrapYard_ContractConfigurator</AssemblyName>
-    <TargetFrameworkVersion>4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
