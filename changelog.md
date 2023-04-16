@@ -10,6 +10,54 @@
 | spacedock  | (https://spacedock.info/mod/1746)                                 |
 | ckan       | ScrapYard                                                         |
 
+## Version 2.2.99.1-prerelease - `<Kanford and Sons: Lisias tinygrox>` edition
+
+* Released
+  * 15 Apr 2023
+  * for Kerbal Space Program 1.12.5
+  * by [zer0Kerbal](https://github.com/zer0Kerbal)
+
+### Summary 2.2.99.1
+
+* Recompiled for 1.12.5 with .NET 4.7.2 using C# 7.0
+  * <ScrapYard.dll> v2.2.99.89 --> 2.2.99.101
+  * <ScrapYard_ContractConfigurator.dll> v2.2.99.58 --> 2.2.99.74
+* two releases:
+  * one with and one without ScrapYard_ContractConfigurator.dll
+  * best solution right now and seems to work
+
+* Add
+  * Brazilian Portuguese (Português Brasil)
+    * [pt-br.cfg] v1.0.0.0
+    * translation courtesy of [Lisias](https://github.com/Lisias)
+  * Simplified Chinese (简体中文)
+    * [zh-cn.cfg] v1.0.0.0
+    * translation courtesy of [tinygrox](https://github.com/tinygrox)
+* Update
+  * Agency and textures
+  * [en-us.cfg] v1.1.1.0
+  * [pt-br.cfg] v1.1.1.0
+  * [zh-cn.cfg] v1.0.1.0
+  * [ModuleSYPartTracker.cfg] v1.0.1.0
+  * [PartBlacklist.cfg] v1.1.1.0
+  * Documentation
+* Take out the git trash
+  * PartBlacklist.cfg had git stash text. Need to sack the sackers who should have sacked those who...
+
+### Status 2.2.99.1
+
+* Issues
+  * closes #76 - ScrapYard (SYD) 2.2.99.1-prerelease `<Kanford and Sons: Lisias tinygrox>` edition
+  * closes #77 - 2.2.99.1 Additional Tasks
+  * closes #30 - Brazilian Portuguese (Português Brasil) <pt-br.cfg>
+  * closes #37 - Simplified Chinese (简体中文) <zh-cn.cfg>
+  * closes #82 - [BUG] Git stash in partblacklist
+  * updates #28 - Localization - Master
+  * updates #78 - [Bug 🐞]: LAG in editor {FlowGraph spam}
+  * updates #81 - [Bug 🐞]: Part's not Applying / FlowGraph Error
+
+---
+
 ## Version 2.2.99.0-prerelease - `<Project Zelda II>` edition
 
 ### Release Notes
