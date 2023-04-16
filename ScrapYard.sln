@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapYard", "ScrapYard\ScrapYard.csproj", "{6C959482-0901-4325-802C-26702BA75CC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapYard", "source\ScrapYard\ScrapYard.csproj", "{6C959482-0901-4325-802C-26702BA75CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapYard_ContractConfigurator", "ScrapYard_ContractConfigurator\ScrapYard_ContractConfigurator.csproj", "{E3457227-5634-43CB-8FCE-A4593A04E787}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapYard_ContractConfigurator", "source\ScrapYard_ContractConfigurator\ScrapYard_ContractConfigurator.csproj", "{E3457227-5634-43CB-8FCE-A4593A04E787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

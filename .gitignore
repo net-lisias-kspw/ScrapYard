@@ -7,9 +7,12 @@ GameData/**/README.md
 GameData/**/CHANGE_LOG.md
 GameData/**/KNOWN_ISSUES.md
 GameData/**/*.version
-Source/**/Version.cs
-Source/**/Configuration.cs
+Source/**/Properties/Version.cs
+Source/**/Properties/Configuration.cs
 Source/*/*.user
+source/**/Properties/Version.cs
+source/**/Properties/Configuration.cs
+source/*/*.user
 bin
 obj
 packages
