@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-//TODO: Change namespace to your mod's namespace
 namespace ScrapYard
 {
     //DO NOT CHANGE ANYTHING BELOW THIS LINE

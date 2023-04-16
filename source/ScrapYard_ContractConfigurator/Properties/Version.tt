@@ -1,14 +1,28 @@
 ﻿<#
 /*
-   * Version.tt
-   * 2.0.4.0
+	* Version.tt
+	* 2.0.4.0
 
-   This file is licensed under the Do What the F* You Want to Public License ( http://www.wtfpl.net )
-   * by zer0Kerbal.
-   *
-   * You are allowed to copy, modify and use this file unrestrictedly. :)  
-   * Just don't bother me with ridiculous demands.
-   * Just remember to credit.
+	* ScrapYard (SYD)
+	* Copyright (C) 2017 magico13
+	* Copyright (C) 2020, 2023 zer0Kerbal
+
+	* This program is free software; you can redistribute it and/or modify
+	* it under the terms of the GNU General Public License as published by
+	* the Free Software Foundation; either version 2 of the License, or (at
+	* your option) any later version.
+
+	* This program is distributed in the hope that it will be useful, but
+	* WITHOUT ANY WARRANTY; without even the implied warranty of
+	* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	* General Public License for more details.
+
+	* You should have received a copy of the GNU General Public License
+	* along with this program; if not, write to the Free Software
+	* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+	* USA.
+
+	* Just remember to credit.
 */
 #>
 <# // from https://docs.microsoft.com/en-us/visualstudio/modeling/walkthrough-generating-code-by-using-text-templates?view=vs-2017 #>
