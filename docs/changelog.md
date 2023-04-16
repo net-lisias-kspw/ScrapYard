@@ -37,7 +37,6 @@ CC BY-ND 4.0 by zer0Kerbal
 * two releases:
   * one with and one without ScrapYard_ContractConfigurator.dll
   * best solution right now and seems to work
-
 * Add
   * Brazilian Portuguese (Português Brasil)
     * [pt-br.cfg] v1.0.0.0
