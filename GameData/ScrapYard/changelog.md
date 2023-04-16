@@ -19,7 +19,7 @@
 
 ### Summary 2.2.99.1
 
-* Recompiled for 1.12.5 with .NET 4.7.2 using C# 7.0
+* Recompiled for 1.12.5 with .NET 4.7.2 using C# 8.0
   * <ScrapYard.dll> v2.2.99.89 --> 2.2.99.101
   * <ScrapYard_ContractConfigurator.dll> v2.2.99.58 --> 2.2.99.74
 * two releases:
