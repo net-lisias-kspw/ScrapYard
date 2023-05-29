@@ -421,7 +421,7 @@ namespace ScrapYard
                     ModuleSYPartTracker tracker = part.Modules["ModuleSYPartTracker"] as ModuleSYPartTracker;
                     tracker.TimesRecovered = TrackerModule.TimesRecovered;
                     tracker.Inventoried = TrackerModule.Inventoried;
-                    tracker.ID = TrackerModule.ID.GetValueOrDefault();
+                    part.persistentId = tracker.ID = TrackerModule.ID.GetValueOrDefault();
                 }
             }
             //fire part changed event

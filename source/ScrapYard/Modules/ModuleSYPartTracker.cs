@@ -28,7 +28,6 @@ namespace ScrapYard.Modules
             set
             {
                 id = value;
-                part.persistentId = value;
                 updateDisplay();
             }
         }
@@ -68,7 +67,7 @@ namespace ScrapYard.Modules
 
         public void MakeFresh()
         {
-            ID = FlightGlobals.CheckPartpersistentId(0, part, false, true);
+            part.persistentId = ID = FlightGlobals.CheckPartpersistentId(0, part, false, true);
             TimesRecovered = 0;
             Inventoried = false;
             updateDisplay();
