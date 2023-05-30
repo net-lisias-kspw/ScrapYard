@@ -28,6 +28,21 @@ namespace ScrapYard.Modules
             set
             {
                 id = value;
+                if (value != this.part.persistentId)
+                    Logging.Log(
+                        string.Format("Part {0}:{1:X} has persistentId={2} and it's being changed to {3}. The ClassID is {4} and the CraftId (cid) is {5}."
+                                        , this.name, this.part.GetInstanceID(), this.part.persistentId, value, this.part.ClassID, this.part.craftID
+                                   )
+                        , Logging.LogType.WARNING
+                    );
+                else
+                    Logging.Log(
+                        string.Format("Part {0}:{1:X} has persistentId={2} and the value ({3}) is being written back. The ClassID is {4} and the CraftId (cid) is {5}."
+                                        , this.name, this.part.GetInstanceID(), this.part.persistentId, value, this.part.ClassID, this.part.craftID
+                                   )
+                        , Logging.LogType.WARNING
+                    );
+
                 part.persistentId = value;
                 updateDisplay();
             }
